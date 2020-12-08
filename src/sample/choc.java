@@ -11,7 +11,7 @@ public class choc extends Thread{
     SourceDataLine line;
 
     public void run(){
-        File fichier = new File("/media/v1ct0r/STOCKAGE-LINUX/VICTOR-files/Projets_java/IdeaProjects/jeuVictor/chocfinal.wav");
+        File fichier = new File("/media/v1ct0r/STOCKAGE-LINUX/VICTOR-files/Projets_java/IdeaProjects/jeuVictor/musiques/chocfinal.wav");
 
         try {
             AudioFileFormat format = AudioSystem.getAudioFileFormat(fichier);
