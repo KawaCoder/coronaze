@@ -324,7 +324,7 @@ public class Main
                     Main.direction();
 
                 }else{
-                    System.out.println("Je n'ai pas compris.Vous décidez de ne pas y aller.");
+                    System.out.println("Je n'ai pas compris.Vous décidez de ne pas y aller. Vous rentrez chez vous.");
                 }
 
             }
@@ -487,10 +487,6 @@ public class Main
         }catch(InterruptedException e){
 
         }
-//        System.out.println("HAHAHAHAHAHAAA!!!!");
-
-        System.out.println("LA SUITE PROCHAINEMENT.VERSION ALPHA.");
-
 
         System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
 
@@ -563,7 +559,7 @@ public class Main
 
         System.out.println("ça marche !" + nomdujoueur);
 
-        String batimentun ="Vous vous réveillez au pied d'un batiment. Vous avez la tete engourdie, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide.";
+        String batimentun ="Vous vous réveillez au pied d'un batiment. Vous avez mal à la tête, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide.";
 
 
 
