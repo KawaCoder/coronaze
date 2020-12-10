@@ -562,8 +562,23 @@ public class Main
         }
 
         System.out.println("ça marche !" + nomdujoueur);
+
+        String batimentun ="Vous vous réveillez au pied d'un batiment. Vous avez la tete engourdie, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide.";
+
+
+
+        for (int k=0;k < batimentun.length(); k++) {
+            try {
+                Thread.sleep(10);
+
+            } catch (InterruptedException e) {
+
+            }
+            System.out.print(batimentun.charAt(k));
+        }
+
+
+
     }
 
 }
-
-//ceci est un test !!!!
