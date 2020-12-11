@@ -261,7 +261,7 @@ public class Main
         est = false;
         nord = false;
         continuer = false;
-        while(continuer == false){
+        while(true){
             System.out.println("Vous n'avez encore rien explore.");
 
             Main.direction();
@@ -273,16 +273,14 @@ public class Main
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
                     System.out.println("\n \n Vous decidez d'y aller. Apres tout, ce n'est qu'un grand immeuble. Pourquoi se mefier?");
-
+                    break;
 
                 }else if (reponse.equalsIgnoreCase("non")){
                     System.out.println("Vous vous sentez mal. Vous decider de rentrer, ou de prendre un autre chemin.\n Mais...Vous avez un mauvais presentiment\n Vous rebroussez chemin. Vous etes de nouveau devant chez vous.");
                     //retour au choix de la direction
-                    Main.direction();
 
                 }else {
                     System.out.println("Je n'ai pas compris.");
-                    Main.direction();
                 }
 
 
@@ -295,12 +293,12 @@ public class Main
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
                     System.out.println("\n \n Vous decidez d'y aller. Vous vous sentez libre d'explorer cette nouvelle ville.");
+                    break;
 
 
                 }else if (reponse.equalsIgnoreCase("non")){
                     System.out.println("Vous vous sentez mal. Vous decider de rentrer, ou de prendre un autre chemin.\n Mais...Vous avez un mauvais presentiment\n Vous rebroussez chemin. Vous etes de nouveau devant chez vous.");
                     //retour au choix de la direction
-                    Main.direction();
 
                 }else{
                     System.out.println("Je n'ai pas compris.Vous décidez de ne pas y aller.");
@@ -316,19 +314,20 @@ public class Main
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
                     System.out.println("\n \n Vous decidez d'y aller. Vous vous sentez libre d'explorer cette nouvelle ville.");
+                    break;
 
 
                 }else if (reponse.equalsIgnoreCase("non")){
                     System.out.println("Vous vous sentez mal. Vous decider de rentrer, ou de prendre un autre chemin.\n Mais...Vous avez un mauvais presentiment\n Vous rebroussez chemin. Vous etes de nouveau devant chez vous.");
                     //retour au choix de la direction
-                    Main.direction();
 
                 }else{
                     System.out.println("Je n'ai pas compris.Vous décidez de ne pas y aller. Vous rentrez chez vous.");
+
                 }
 
             }
-            continuer = true;
+
 
 
         }
