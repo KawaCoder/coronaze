@@ -331,7 +331,6 @@ public class Main
 
 
         }
-        //System.out.println("LA SUITE PROCHAINEMENT.VERSION ALPHA.");
 
         try{
             Thread.sleep(2000);
@@ -344,7 +343,7 @@ public class Main
         choc chocsong = new choc();
         chocsong.start();
 
-        /*
+/*
         try{
             Thread.sleep(500);
 
