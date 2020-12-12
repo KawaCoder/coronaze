@@ -581,6 +581,11 @@ public class Main
         System.out.println("\n");
         Main.recherchemots();
 
+        if(observer == true){
+            System.out.println("TEST");
+
+        }
+
     }
 
 }
