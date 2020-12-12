@@ -578,8 +578,7 @@ public class Main
             System.out.print(str1.charAt(k));
         }
 
-
-
+        Main.recherchemots();
 
 
     }
