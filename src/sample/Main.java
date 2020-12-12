@@ -557,18 +557,18 @@ public class Main
 
         System.out.println("ça marche !" + nomdujoueur);
 
-        String batimentun ="Vous vous réveillez au pied d'un batiment. Vous avez mal à la tête, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide.";
+        String str1 ="Vous vous réveillez au milieu d'une route. Vous avez mal à la tête, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide. \n Tout est sombre, cela n'arrange pas votre vue... TAPEZ \"OBSERVER\" ou \"REGARDER\"pour regarder autour de vous.";
 
 
 
-        for (int k=0;k < batimentun.length(); k++) {
+        for (int k=0;k < str1.length(); k++) {
             try {
                 Thread.sleep(10);
 
             } catch (InterruptedException e) {
 
             }
-            System.out.print(batimentun.charAt(k));
+            System.out.print(str1.charAt(k));
         }
 
 
