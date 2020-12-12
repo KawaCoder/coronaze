@@ -35,7 +35,7 @@ public class Main
 
 
     //méthose d'analyse d'entrée de l'utilisateur
-    public static void recherchemots(){
+    public static void recherchemots() {
         Scanner sc = new Scanner(System.in);
         reponse = sc.nextLine();
         //ints qui permettent la recherche dans l'input les mots "ordinateur", "enceinte", "gel" ...
@@ -48,25 +48,29 @@ public class Main
         int rechercheobserver = reponse.indexOf("observer");
         int rechercheregarder = reponse.indexOf("regarder");
 
+
         if (rechercheordi >= 0) {
             ordinateur = true;
 
-        }else if (rechercheenceinte >= 0){
+        } else if (rechercheenceinte >= 0) {
             enceinte = true;
 
-        }else if (recherchegel >= 0 && objetpris == 0){
+        } else if (recherchegel >= 0 && objetpris == 0) {
             gel = true;
 
-        }else if (recherchesortir >= 0 || recherchepartir >= 0){
+        } else if (recherchesortir >= 0 || recherchepartir >= 0) {
             sortir = true;
 
-        }else if (rechercheinventaire >= 0){
-            try{
+        } else if (rechercheinventaire >= 0) {
+            try {
                 Main.afficherinventaire(inventaire);
-            } catch(ArrayIndexOutOfBoundsException e) {
+            } catch (ArrayIndexOutOfBoundsException e) {
 
             }
 
+
+        }else if (rechercheobserver >= 0  || rechercheregarder >= 0) {
+            observer = true;
 
         }else{
 
