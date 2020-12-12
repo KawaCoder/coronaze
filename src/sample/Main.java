@@ -68,7 +68,6 @@ public class Main
 
             }
 
-
         }else if (rechercheobserver >= 0  || rechercheregarder >= 0) {
             observer = true;
 
@@ -582,9 +581,11 @@ public class Main
         Main.recherchemots();
 
         if(observer == true){
-            System.out.println("TEST");
+            System.out.println("Vous voyez: ");
 
         }
+
+
 
     }
 
