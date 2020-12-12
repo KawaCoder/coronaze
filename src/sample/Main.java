@@ -564,7 +564,7 @@ public class Main
 
         System.out.println("ça marche !" + nomdujoueur);
 
-        String str1 ="Vous vous réveillez au milieu d'une route. Vous avez mal à la tête, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide. \n Tout est sombre, cela n'arrange pas votre vue... TAPEZ \"OBSERVER\" ou \"REGARDER\"pour regarder autour de vous.";
+        String str1 ="Vous vous réveillez au milieu d'une route. Vous avez mal à la tête, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide. \n Tout est sombre, cela n'arrange pas votre vue... TAPEZ \"OBSERVER\" ou \"REGARDER\" pour regarder autour de vous.";
 
 
 
@@ -578,8 +578,8 @@ public class Main
             System.out.print(str1.charAt(k));
         }
 
+        System.out.println("\n");
         Main.recherchemots();
-
 
     }
 
