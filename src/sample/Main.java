@@ -30,6 +30,7 @@ public class Main
     private static boolean gel = false;
     private static boolean enceinte = false;
     private static boolean sortir = false;
+    private static boolean observer = false;
 
 
 
@@ -44,6 +45,8 @@ public class Main
         int rechercheenceinte = reponse.indexOf("enceinte");
         int recherchegel = reponse.indexOf("gel");
         int rechercheinventaire = reponse.indexOf("inventaire");
+        int rechercheobserver = reponse.indexOf("observer");
+        int rechercheregarder = reponse.indexOf("regarder");
 
         if (rechercheordi >= 0) {
             ordinateur = true;
@@ -570,6 +573,8 @@ public class Main
             }
             System.out.print(str1.charAt(k));
         }
+
+
 
 
 
