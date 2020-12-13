@@ -11,7 +11,7 @@ public class Main
 
 
 
-    private static int objetpris = 0;
+    private static boolean objetpris = false;
     private static int inventaire = 0;
     private static int limiteinventaire = 4;
     private static int placerestante = limiteinventaire - inventaire;
@@ -55,7 +55,7 @@ public class Main
         } else if (rechercheenceinte >= 0) {
             enceinte = true;
 
-        } else if (recherchegel >= 0 && objetpris == 0) {
+        } else if (recherchegel >= 0 && objetpris == false) {
             gel = true;
 
         } else if (recherchesortir >= 0 || recherchepartir >= 0) {
@@ -89,19 +89,18 @@ public class Main
     public static void direction(){
         System.out.println("Aller au Nord(n), a l'Est(e), ou a l'ouest(o)?");
         Scanner sc = new Scanner(System.in);
-        boolean continuer1 = false;
-        while(continuer1 == false){
+        while(true){
             String reponse = sc.nextLine();
             char i = reponse.charAt(0);
             if(i == 'n'){
                 nord = true;
-                continuer1 = true;
+                break;
             }else if(i == 'e'){
                 est = true;
-                continuer1 = true;
+                break;
             }else if(i == 'o'){
                 ouest = true;
-                continuer1 = true;
+                break;
             }
         }
     }
@@ -133,7 +132,7 @@ public class Main
             System.out.println("Vous avez mis l'objet "+ objet +" dans votre inventaire. Tapez \"inventaire\" pour gerer votre inventaire.");
         }else if(reponseobjet.equalsIgnoreCase("non")){
             System.out.println("\n \n Ok");
-            objetpris = 0;
+            objetpris = false;
 
 
         }
@@ -168,7 +167,7 @@ public class Main
         while(continuer == false) {
 
             System.out.println("\n \n \n");
-            if (objetpris == 0) {
+            if (objetpris == false) {
 
                 System.out.println("Vous voyez:\n ordinateur \n gel hydroalcolique \n enceinte bluetooth");
             } else {
@@ -246,7 +245,7 @@ public class Main
 
             if(gel == true){
                 objet = "gel";
-                objetpris =1;
+                objetpris = true;
 
                 Main.mettreItemInventaire(objet, placerestante);
                 gel = false;
@@ -584,6 +583,25 @@ public class Main
             System.out.println("Vous voyez: ");
 
         }
+        //question 2: entrée dans l'histoire.
+        while(true){
+
+            System.out.println("\n \n \n");
+            objetpris = false;
+            if (objetpris == true) {
+
+                System.out.println("Vous voyez:\n ordinateur \n gel hydroalcolique \n enceinte bluetooth");
+            } else {
+                System.out.println("Vous voyez:\n ordinateur \n enceinte bluetooth");
+
+            }
+
+
+            Main.recherchemots();
+
+        }
+
+
 
 
 
