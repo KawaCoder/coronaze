@@ -579,31 +579,27 @@ public class Main
         System.out.println("\n");
         Main.recherchemots();
 
-        if(observer == true){
+        if(observer == true) {
             System.out.println("Vous voyez: ");
 
+
+            //question 2: entrée dans l'histoire.
+
+                System.out.println("\n \n \n");
+                objetpris = false;
+                if (objetpris == true) {
+
+                    System.out.println("Vous voyez:\n une  \n gel hydroalcolique \n enceinte bluetooth");
+                } else {
+                    System.out.println("Vous voyez:\n ordinateur \n enceinte bluetooth");
+
+                }
+
+
+                Main.recherchemots();
+
+
         }
-        //question 2: entrée dans l'histoire.
-        while(true){
-
-            System.out.println("\n \n \n");
-            objetpris = false;
-            if (objetpris == true) {
-
-                System.out.println("Vous voyez:\n ordinateur \n gel hydroalcolique \n enceinte bluetooth");
-            } else {
-                System.out.println("Vous voyez:\n ordinateur \n enceinte bluetooth");
-
-            }
-
-
-            Main.recherchemots();
-
-        }
-
-
-
-
 
     }
 
