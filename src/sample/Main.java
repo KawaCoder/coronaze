@@ -580,7 +580,6 @@ public class Main
         Main.recherchemots();
 
         if(observer == true) {
-            System.out.println("Vous voyez: ");
 
 
             //question 2: entrée dans l'histoire.
@@ -589,9 +588,9 @@ public class Main
                 objetpris = false;
                 if (objetpris == true) {
 
-                    System.out.println("Vous voyez:\n une  \n gel hydroalcolique \n enceinte bluetooth");
+                    System.out.println("Vous voyez:\n  \n gel hydroalcolique \n ");
                 } else {
-                    System.out.println("Vous voyez:\n ordinateur \n enceinte bluetooth");
+                    System.out.println("Vous voyez:\n une feuille de papier \n une voiture");
 
                 }
 
