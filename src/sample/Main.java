@@ -608,6 +608,9 @@ public class Main
                 if (feuille = true){
                     System.out.println("Vous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
                     objet = "feuille";
+                    objetpris = true;
+                    Main.mettreItemInventaire(objet, placerestante);
+                    feuille = false;
                 }
 
 
