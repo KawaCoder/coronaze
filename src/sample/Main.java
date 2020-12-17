@@ -352,7 +352,6 @@ public class Main
         }
         song.stop();
 
-/*
         choc chocsong = new choc();
         chocsong.start();
 
@@ -521,7 +520,6 @@ public class Main
             }
         }
 
-*/
 
 
 
@@ -611,7 +609,7 @@ public class Main
                     Main.mettreItemInventaire(objet, placerestante);
                     feuille = false;
 
-                }
+                }//else if (recherchevoiture){
 
             }
 
