@@ -352,17 +352,10 @@ public class Main
         }
         song.stop();
 
+/*
         choc chocsong = new choc();
         chocsong.start();
 
-/*
-        try{
-            Thread.sleep(500);
-
-        }catch(InterruptedException e){
-
-        }
-         */
 
         String bannierec = "\n" +
                 "░█████╗░\n" +
@@ -528,6 +521,7 @@ public class Main
             }
         }
 
+*/
 
 
 
@@ -584,6 +578,7 @@ public class Main
         }
 
 
+        objetpris = false;
         while(true){
         System.out.println("\n");
         Main.recherchemots();
@@ -594,7 +589,7 @@ public class Main
                 //question 2: entrée dans l'histoire.
 
                 System.out.println("\n \n \n");
-                objetpris = false;
+
                 if (objetpris == true) {
 
                     System.out.println("Vous voyez:\n une voiture \n l'objet \"" + objet + "\" à été pris!");
@@ -607,12 +602,15 @@ public class Main
                 Main.recherchemots();
 
 
-                if (feuille = true) {
+                if (feuille == true && objetpris == true) {
+                    System.out.println("Vous avez deja pris cet objet. Tapez \"inventaire\n pour gerer votre inventaire.");
+                }else if (feuille == true){
                     System.out.println("Vous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
                     objet = "feuille";
                     objetpris = true;
                     Main.mettreItemInventaire(objet, placerestante);
                     feuille = false;
+
                 }
 
             }
