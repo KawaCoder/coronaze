@@ -50,6 +50,7 @@ public class Main
         int rechercheinventaire = reponse.indexOf("inventaire");
         int rechercheobserver = reponse.indexOf("observer");
         int rechercheregarder = reponse.indexOf("regarder");
+        int recherchefeuille = reponse.indexOf("feuille");
 
 
         if (rechercheordi >= 0) {
@@ -70,6 +71,9 @@ public class Main
             } catch (ArrayIndexOutOfBoundsException e) {
 
             }
+
+        }else if (recherchefeuille >= 0 && objetpris == false){
+            feuille = true;
 
         }else if (rechercheobserver >= 0  || rechercheregarder >= 0) {
             observer = true;
@@ -601,7 +605,10 @@ public class Main
                 Main.recherchemots();
 
 
-
+                if (feuille = true){
+                    System.out.println("Vous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
+                    objet = "feuille";
+                }
 
 
         }
