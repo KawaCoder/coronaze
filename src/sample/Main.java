@@ -583,19 +583,21 @@ public class Main
             System.out.print(str1.charAt(k));
         }
 
+
+        while(true){
         System.out.println("\n");
         Main.recherchemots();
 
-        if(observer == true) {
+            if(observer == true) {
 
 
-            //question 2: entrée dans l'histoire.
+                //question 2: entrée dans l'histoire.
 
                 System.out.println("\n \n \n");
                 objetpris = false;
                 if (objetpris == true) {
 
-                    System.out.println("Vous voyez:\n une voiture \n une feuille de papier \n l'objet \"" +objet+ "\" à été pris!");
+                    System.out.println("Vous voyez:\n une voiture \n l'objet \"" + objet + "\" à été pris!");
                 } else {
                     System.out.println("Vous voyez:\n une feuille de papier \n une voiture");
 
@@ -605,7 +607,7 @@ public class Main
                 Main.recherchemots();
 
 
-                if (feuille = true){
+                if (feuille = true) {
                     System.out.println("Vous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
                     objet = "feuille";
                     objetpris = true;
@@ -613,8 +615,15 @@ public class Main
                     feuille = false;
                 }
 
+            }
+
+
+
 
         }
+
+
+
 
     }
 
