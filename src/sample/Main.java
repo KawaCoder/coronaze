@@ -26,11 +26,14 @@ public class Main
     private static boolean ouest = false;
 
     private static String reponse = " ";
-    private static boolean ordinateur = false;
-    private static boolean gel = false;
-    private static boolean enceinte = false;
     private static boolean sortir = false;
     private static boolean observer = false;
+
+    //           *******  les objets! *******
+    private static boolean enceinte = false;
+    private static boolean ordinateur = false;
+    private static boolean gel = false;
+    private static boolean feuille = false;
 
 
 
@@ -588,7 +591,7 @@ public class Main
                 objetpris = false;
                 if (objetpris == true) {
 
-                    System.out.println("Vous voyez:\n  \n gel hydroalcolique \n ");
+                    System.out.println("Vous voyez:\n une voiture \n une feuille de papier \n l'objet \"" +objet+ "\" à été pris!");
                 } else {
                     System.out.println("Vous voyez:\n une feuille de papier \n une voiture");
 
@@ -596,6 +599,9 @@ public class Main
 
 
                 Main.recherchemots();
+
+
+
 
 
         }
