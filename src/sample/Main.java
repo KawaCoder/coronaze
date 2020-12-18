@@ -34,6 +34,7 @@ public class Main
     private static boolean ordinateur = false;
     private static boolean gel = false;
     private static boolean feuille = false;
+    private static boolean voiture = false;
 
 
 
@@ -51,6 +52,7 @@ public class Main
         int rechercheobserver = reponse.indexOf("observer");
         int rechercheregarder = reponse.indexOf("regarder");
         int recherchefeuille = reponse.indexOf("feuille");
+        int recherchevoiture = reponse.indexOf("voiture");
 
 
         if (rechercheordi >= 0) {
@@ -61,6 +63,10 @@ public class Main
 
         } else if (recherchegel >= 0 && objetpris == false) {
             gel = true;
+
+
+        }else if (recherchevoiture >= 0){
+            voiture = true;
 
         } else if (recherchesortir >= 0 || recherchepartir >= 0) {
             sortir = true;
@@ -561,7 +567,7 @@ public class Main
 
         System.out.println("ça marche !" + nomdujoueur);
 
-        String str1 ="Vous vous réveillez au milieu d'une route. Vous avez mal à la tête, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide. \n Tout est sombre, cela n'arrange pas votre vue... TAPEZ \"OBSERVER\" ou \"REGARDER\" pour regarder autour de vous.";
+        String str1 ="Vous vous réveillez au milieu d'une route. Toutes les voitures sont abandonnées, comme si il y avait eu une catastrophe. \nVous avez mal à la tête, et vous voyez flou. L'air que vous respirez est etrangement lourd et humide. \n Tout est sombre, cela n'arrange pas votre vue... TAPEZ \"OBSERVER\" ou \"REGARDER\" pour regarder autour de vous.";
 
 
 
@@ -609,7 +615,14 @@ public class Main
                     Main.mettreItemInventaire(objet, placerestante);
                     feuille = false;
 
-                }//else if (recherchevoiture){
+                }else if (voiture == true){
+                    System.out.println("Vous vous dirigez vers ce véhicule abandonné." +
+                            "Vous pouvez:" +
+                            "-regarder dans le COFFRE" +
+                            "-monter DEDANS" +
+                            "-monter DESSUS");
+
+                }
 
             }
 
