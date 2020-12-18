@@ -19,7 +19,6 @@ public class Main
     private static String objet = "aucun objet";
 
     private static boolean continuer = false;
-    private static boolean continuer1 = false;
 
     private static boolean nord = false;
     private static boolean est = false;
@@ -124,9 +123,9 @@ public class Main
     public static String afficherinventaire(int inventaire){
         System.out.println("\n \n Vous avez " +inventaire+ " objets dans votre inventaire:");
 
-
-        System.out.println("-" +itemsinventaire[inventaire -1]);
-        return("bip");
+        for (int g = -1;g < inventaire -1; g ++ )
+            System.out.println("-" +itemsinventaire[g +1]);
+            return("bip");
 
     }
 
