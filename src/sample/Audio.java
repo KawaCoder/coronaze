@@ -11,7 +11,7 @@ public class Audio extends Thread{
     SourceDataLine line;
 
     public void run(){
-        File fichier = new File("/media/v1ct0r/STOCKAGE-LINUX/VICTOR-files/Projets_java/IdeaProjects/jeuVictor/musiques/cacatyestsjeumumu.wav");
+        File fichier = new File("./src/musiques/cacatyestsjeumumu.wav");
         try {
             AudioFileFormat format = AudioSystem.getAudioFileFormat(fichier);
         } catch (UnsupportedAudioFileException e1) {
