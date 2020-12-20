@@ -11,7 +11,7 @@ public class choc extends Thread{
     SourceDataLine line;
 
     public void run(){
-        File fichier = new File("./src/musiques/chocfinal.wav");
+        File fichier = new File("./musiques/chocfinal.wav");
 
         try {
             AudioFileFormat format = AudioSystem.getAudioFileFormat(fichier);
