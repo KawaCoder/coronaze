@@ -1,3 +1,3 @@
 # coronaze
 
-## The project is strongly under development! Version -1000.0.0 The game isn't playable yet, but you can also run it, but it is not finished, and this is very buggy! 
+## The game is not playable at all! It is in a very late stage of development. You can still run it, but the music will be missing and be careful where you walk, there are lots of bugs! :)
