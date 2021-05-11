@@ -11,7 +11,7 @@ public class Audio extends Thread{
     SourceDataLine line;
 
     public void run(){
-        File fichier = new File("./src/musiques/cacatyestsjeumumu.wav");
+        File fichier = new File("./musiques/cacatyestsjeumumu.wav");
         try {
             AudioFileFormat format = AudioSystem.getAudioFileFormat(fichier);
         } catch (UnsupportedAudioFileException e1) {

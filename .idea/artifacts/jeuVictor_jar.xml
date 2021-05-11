@@ -1,10 +1,8 @@
 <component name="ArtifactManager">
-  <artifact name="jeuVictor:jar">
+  <artifact type="jar" name="jeuVictor:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/jeuVictor_jar</output-path>
-    <root id="root">
-      <element id="archive" name="jeuVictor.jar">
-        <element id="module-output" name="jeuVictor" />
-      </element>
+    <root id="archive" name="jeuVictor.jar">
+      <element id="module-output" name="jeuVictor" />
     </root>
   </artifact>
 </component>
