@@ -6,8 +6,18 @@ import java.util.Scanner;
 public class Main
 {
 
-
-
+//
+//                    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+//                    ░   ░░░░░░░░░░░░░░░░░░░░░░   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ░░
+//                    ▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒
+//                    ▒   ▒   ▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒   ▒▒▒▒▒   ▒▒▒▒▒   ▒▒▒▒   ▒▒▒▒▒   ▒▒▒▒   ▒▒▒▒▒  ▒   ▒▒▒    ▒   ▒   ▒▒▒▒▒   ▒▒▒▒▒   ▒   ▒▒▒    ▒
+//                    ▓   ▓▓   ▓▓   ▓▓▓▓▓▓▓▓   ▓   ▓▓▓  ▓▓▓   ▓▓▓   ▓▓▓   ▓▓▓  ▓▓▓   ▓▓   ▓▓   ▓▓   ▓▓  ▓▓   ▓▓▓   ▓▓  ▓▓   ▓▓  ▓▓▓   ▓▓▓   ▓▓   ▓▓▓   ▓▓
+//                    ▓   ▓▓   ▓▓   ▓▓▓▓▓▓▓  ▓▓▓   ▓▓         ▓▓▓▓   ▓   ▓▓▓         ▓▓   ▓   ▓▓▓▓   ▓  ▓▓▓   ▓▓   ▓▓  ▓▓   ▓         ▓▓▓   ▓▓   ▓▓▓   ▓▓
+//                    ▓   ▓▓   ▓▓   ▓▓▓▓▓▓▓  ▓▓▓   ▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓     ▓▓▓▓  ▓▓▓▓▓▓▓▓▓   ▓▓   ▓▓   ▓▓   ▓   ▓▓▓   ▓▓  ▓▓   ▓  ▓▓▓▓▓▓▓▓▓▓   ▓▓   ▓▓▓   ▓
+//                    █   █    ██   ████████   █   ████     ████████   ███████     ████   ████   █████   ██████    ██  ██   ███     ████    ██   ████   █
+//                    ████████████████████████████████████████████████████████████████████████████████   ████████████████████████████████████████████████
+//                    https://www.github.com/DR34M-M4K3R                                                     https://discord.com/users/725672294692945991
+//
 
 
 
@@ -18,7 +28,7 @@ public class Main
     private static String [] itemsinventaire = new String [limiteinventaire];
     private static String objet = "aucun objet";
 
-    private static boolean continuer = false;
+//    private static boolean continuer = false;             inutile ._.
 
     private static boolean nord = false;
     private static boolean est = false;
@@ -36,6 +46,8 @@ public class Main
     private static boolean voiture = false;
     private static boolean dedans = false;
     private static boolean dessus = false;
+    private static boolean suicide = false;
+    private static boolean frapper = false;
 
 
 
@@ -56,12 +68,21 @@ public class Main
         int recherchevoiture = reponse.indexOf("voiture");
         int recherchededans = reponse.indexOf("dedans");
         int recherchedessus = reponse.indexOf("dessus");
+        int recherchesuicide = reponse.indexOf("suicide");
+        int recherchefrapper = reponse.indexOf("frapper");
+
 
 
         if (rechercheordi >= 0) {
             ordinateur = true;
 
-        } else if (rechercheenceinte >= 0) {
+        }else if (recherchesuicide >= 0) {
+            suicide = true;
+
+        }else if (recherchefrapper >= 0) {
+            frapper = true;
+
+        }else if (rechercheenceinte >= 0) {
             enceinte = true;
 
         }else if (recherchededans >= 0) {
@@ -103,9 +124,6 @@ public class Main
 
 
 
-
-
-
     //methode d'analyse d'entree pour la direction a prendre
     public static void direction(){
         System.out.println("Aller au Nord(n), a l'Est(e), ou a l'ouest(o)?");
@@ -141,21 +159,26 @@ public class Main
 
 //methode d'addition d'un objet dans l'inventaire
 
-    public static String mettreItemInventaire(String objet, int placerestante){
+    public static String mettreItemInventaire(String objet/*, int placerestante*/){
 
+        while(true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("\n\n Il vous reste " + (limiteinventaire - inventaire) + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
+            String reponseobjet = sc.nextLine();
+            if (reponseobjet.equalsIgnoreCase("oui")) {
+                itemsinventaire[inventaire] = objet;
+                inventaire++;
+                System.out.println("\n\nVous avez mis l'objet " + objet + " dans votre inventaire. Tapez \"inventaire\" pour voir votre inventaire.");
+                break;
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println(" Il vous reste " + placerestante + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
-        String reponseobjet = sc.nextLine();
-        if (reponseobjet.equalsIgnoreCase("oui")){
-            itemsinventaire[inventaire] = objet;
-            inventaire ++;
-            System.out.println("Vous avez mis l'objet "+ objet +" dans votre inventaire. Tapez \"inventaire\" pour gerer votre inventaire.");
-        }else if(reponseobjet.equalsIgnoreCase("non")){
-            System.out.println("\n \n Ok");
-            objetpris = false;
+            } else if (reponseobjet.equalsIgnoreCase("non")) {
+                System.out.println("\n \n Ok");
+                objetpris = false;
+                break;
 
-
+            }else{
+                System.out.println("je n'ai pas compris.");
+            }
         }
         return ("azertyuiop");
     }
@@ -185,10 +208,10 @@ public class Main
 
 
         //question1 : debut
-        while(continuer == false) {
+        while(true) {
 
             System.out.println("\n \n \n");
-            if (objetpris == false) {
+            if (!objetpris) {
 
                 System.out.println("Vous voyez:\n ordinateur \n gel hydroalcolique \n enceinte bluetooth");
             } else {
@@ -200,7 +223,7 @@ public class Main
 
             Main.recherchemots();
 
-            if(ordinateur == true){
+            if(ordinateur){
                 j++;
                 if (j == 1) {
                     System.out.println("\n \n Votre ordinateur n'a plus de batterie");
@@ -236,16 +259,16 @@ public class Main
                     System.out.println("Bon... je vais donc le remplacer... (tiens! j'aime bien cette musique!)");
 
 
-
-
-
                 }
-            }
+            }else if(suicide){
+                System.out.println("\n\nVous ouvrez la fenêtre, puis vous sautez. Vous mourez sur le coup. Vous êtes maintenant un fantôme.");
+                suicide = false;
 
-            if(enceinte == true){
+
+            }else if(enceinte){
                 i++;
                 System.out.println(i);
-                if(musique == false){
+                if(!musique){
                     song.start();
                     musique = true;
                     System.out.println("\n \n  Vous mettez de la musique. L'ambiance s'ameliore.Vous vous rendez compte que vous etiez stresse(e)\n mais...pourquoi? Quelque chose vous angoisse mais vous \n ne savez pas quoi...Surement un mauvais presentiment...");
@@ -260,23 +283,21 @@ public class Main
 
                 }
 
-
                 enceinte = false;
-            }
 
-            if(gel == true){
+
+            }else if(gel){
                 objet = "gel";
                 objetpris = true;
 
-                Main.mettreItemInventaire(objet, placerestante);
+                Main.mettreItemInventaire(objet/*, placerestante*/);
                 gel = false;
 
-            }
 
-            if(sortir == true) {
+            }else if(sortir) {
                 System.out.println("\n \n Vous sortez pour vous changer les idees.L'air frais vous fera du bien. \n Ou voulez-vous aller?");
-                continuer = true;
                 sortir = false;
+                break;
             }
         }
 
@@ -286,7 +307,6 @@ public class Main
         ouest = false;
         est = false;
         nord = false;
-        continuer = false;
         while(true){
             System.out.println("Vous n'avez encore rien explore.");
 
@@ -294,7 +314,7 @@ public class Main
 
             //si le Nord est choisi
             //         System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
-            if(nord == true){
+            if(nord){
                 System.out.println("\n \n Vous allez vers le Nord...Vous voyez un batiment au loin, y aller?");
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
@@ -314,7 +334,7 @@ public class Main
 
                 //si l'ouest est choisi
                 //  System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
-            }else if(ouest == true){
+            }else if(ouest){
                 System.out.println("\n \n Vous allez vers l'ouest...Vous voyez un batiment au loin, y aller?");
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
@@ -335,7 +355,7 @@ public class Main
 
                 //si l'est est choisi
                 // System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
-            }else if(est == true){
+            }else if(est){
                 System.out.println("\n \n Vous allez vers l'est...Vous voyez un batiment au loin, y aller?");
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
@@ -354,10 +374,9 @@ public class Main
 
             }
 
-
-
         }
 
+/*
         try{
             Thread.sleep(2000);
 
@@ -437,110 +456,111 @@ public class Main
         String toutestnoir = "TOUT EST NOIR";
         String cestlafin = "C'EST LA FIN";
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//        for (int k=0;k < toutestnoir.length(); k++) {
-//            try {
-//                Thread.sleep(200);
-//
-//            } catch (InterruptedException e) {
-//
-//            }
-//            System.out.print(toutestnoir.charAt(k));
-//        }
-//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//
-//
-//
-//
-//        try{
-//            Thread.sleep(2000);
-//
-//        }catch(InterruptedException e){
-//
-//        }
-//
-//
-//
-//        for (int k=0;k < unchoc.length(); k++) {
-//            try {
-//                Thread.sleep(200);
-//
-//            } catch (InterruptedException e) {
-//
-//            }
-//            System.out.print(unchoc.charAt(k));
-//        }
-//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//
-//        try{
-//            Thread.sleep(2000);
-//
-//        }catch(InterruptedException e){
-//
-//        }
-//
-//
-//        for (int k=0;k < cestlafin.length(); k++) {
-//            try {
-//                Thread.sleep(200);
-//
-//            } catch (InterruptedException e) {
-//
-//            }
-//            System.out.print(cestlafin.charAt(k));
-//        }
-//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//
-//        try{
-//            Thread.sleep(2000);
-//
-//        }catch(InterruptedException e){
-//
-//        }
-//
-//        try{
-//            Thread.sleep(2000);
-//
-//        }catch(InterruptedException e){
-//
-//        }
-//
-//        System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
-//
-//
-//        String[] banniere = new String[8];
-//        banniere[0] = bannierec;
-//        banniere[1] = banniereo;
-//        banniere[2] = bannierer;
-//        banniere[3] = banniereo2;
-//        banniere[4] = bannieren;
-//        banniere[5] = bannierea;
-//        banniere[6] = bannierez;
-//        banniere[7] = bannieree;
-//
-//
-//
-//        for (int l=0;l < 8; l++){
-//
-//            for (int k=0;k < banniere[l].length(); k++) {
-//
-//                try {
-//                    Thread.sleep(1);
-//
-//                } catch (InterruptedException e) {
-//
-//                }
-//
-//                System.out.print(banniere[l].charAt(k));
-//            }
-//        }
-//
-//
-//
-//
-//
-//
-//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//
+        for (int k=0;k < toutestnoir.length(); k++) {
+            try {
+                Thread.sleep(200);
+
+            } catch (InterruptedException e) {
+
+            }
+            System.out.print(toutestnoir.charAt(k));
+        }
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+
+
+
+        try{
+            Thread.sleep(2000);
+
+        }catch(InterruptedException e){
+
+        }
+
+
+
+        for (int k=0;k < unchoc.length(); k++) {
+            try {
+                Thread.sleep(200);
+
+            } catch (InterruptedException e) {
+
+            }
+            System.out.print(unchoc.charAt(k));
+        }
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+        try{
+            Thread.sleep(2000);
+
+        }catch(InterruptedException e){
+
+        }
+
+
+        for (int k=0;k < cestlafin.length(); k++) {
+            try {
+                Thread.sleep(200);
+
+            } catch (InterruptedException e) {
+
+            }
+            System.out.print(cestlafin.charAt(k));
+        }
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+        try{
+            Thread.sleep(2000);
+
+        }catch(InterruptedException e){
+
+        }
+
+        try{
+            Thread.sleep(2000);
+
+        }catch(InterruptedException e){
+
+        }
+
+        System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
+
+
+        String[] banniere = new String[8];
+        banniere[0] = bannierec;
+        banniere[1] = banniereo;
+        banniere[2] = bannierer;
+        banniere[3] = banniereo2;
+        banniere[4] = bannieren;
+        banniere[5] = bannierea;
+        banniere[6] = bannierez;
+        banniere[7] = bannieree;
+
+
+
+        for (int l=0;l < 8; l++){
+
+            for (int k=0;k < banniere[l].length(); k++) {
+
+                try {
+                    Thread.sleep(1);
+
+                } catch (InterruptedException e) {
+
+                }
+
+                System.out.print(banniere[l].charAt(k));
+            }
+        }
+
+
+
+*/
+
+
+
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 
 
 /*
@@ -579,7 +599,7 @@ public class Main
 
         for (int k=0;k < str1.length(); k++) {
             try {
-                Thread.sleep(10);
+                Thread.sleep(20);
 
             } catch (InterruptedException e) {
 
@@ -593,14 +613,14 @@ public class Main
             System.out.println("\n");
             Main.recherchemots();
 
-            if(observer == true) {
+            if(observer) {
 
 
                 //question 2: entrée dans l'histoire.
 
                 System.out.println("\n \n \n");
 
-                if (objetpris == true) {
+                if (objetpris) {
 
                     System.out.println("Vous voyez:\n une voiture \n");
                 } else {
@@ -612,50 +632,48 @@ public class Main
                 Main.recherchemots();
 
 
-                if (feuille == true && objetpris == true) {
-                    System.out.println("Vous avez deja pris cet objet. Tapez \"inventaire\n pour gerer votre inventaire.");
-                }else if (feuille == true){
-                    System.out.println("Vous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
+                if (feuille){
+                    System.out.println("\n\nVous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
                     objet = "feuille";
                     objetpris = true;
-                    Main.mettreItemInventaire(objet, placerestante);
+
+                    Main.mettreItemInventaire(objet/*, placerestante*/);
                     feuille = false;
 
-                }else if (voiture == true){
+                }else if (voiture){
                     while(true) {
-                        System.out.println("Vous vous dirigez vers ce véhicule abandonné." +
+                        System.out.println("\n\nVous vous dirigez vers ce véhicule abandonné." +
                                 "Vous pouvez:" +
                                 "\nregarder dans le COFFRE" +
                                 "\nmonter DEDANS" +
                                 "\nmonter DESSUS");
 
-                        reponse = sc.nextLine();
-
+                        Main.recherchemots();
                         if (dedans){
-                            System.out.println("La voiture est fermée à clef. la porte semble faible...");
+                            System.out.println("\n\nLa voiture est fermée à clef. la porte semble faible...");
+                            dedans = false;
 
                         }else if (dessus){
-                            System.out.println("Vous montez sur la voiture...");
-                            try {Thread.sleep(1000);}catch(InterruptedException e){
-                                System.out.println("Le brouillard vous empeche de voir tres loin... Mais vous remarquez que ");
+                            System.out.println("\n\nVous montez sur la voiture...");
+                            try {Thread.sleep(1000);}catch(InterruptedException e){}
+                            while(true) {
+                                System.out.println("\n\nLe brouillard vous empêche de voir très loin... vous pouvez:" +
+                                        "\n redescendre" +
+                                        "\n casser le pare-brise");
 
+                                Main.recherchemots();
+                                if (frapper){
+                                    System.out.println("");
+
+                                }
+                                //IN DEV !
                             }
 
                         }
-
                     }
                 }
-
             }
-
-
-
-
         }
-
-
-
-
     }
 
 }
