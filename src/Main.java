@@ -19,7 +19,6 @@ public class Main
 //
 
 
-
     private static boolean objetpris = false;
     private static int inventaire = 0;
     private static int limiteinventaire = 4;
