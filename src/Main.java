@@ -31,6 +31,7 @@ public class Main
 
 
 
+
     private static boolean nord = false;
     private static boolean est = false;
     private static boolean ouest = false;
