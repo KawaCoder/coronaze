@@ -110,6 +110,7 @@ public class Main
         int recherchefrapper = reponse.indexOf("frapper");
         int rechercheequiper = reponse.indexOf("équiper");
         int rechercheprendre = reponse.indexOf("prendre");
+        int rechercheinfo = reponse.indexOf("info");
 
 
 
@@ -123,6 +124,12 @@ public class Main
 
         }else if (recherchesuicide >= 0) {
             suicide = true;
+
+        }else if (rechercheinfo >= 0) {
+            System.out.println("vous avez "+objetdanslamain+" dans la main.");
+            System.out.println("Vous causez alors "+degatcauses+" dégats.");
+
+
 
         }else if (rechercheequiper >= 0) {
             int k = 0;
