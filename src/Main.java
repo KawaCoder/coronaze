@@ -1,5 +1,4 @@
 //package sample;
-// this is such a test
 import java.util.Scanner;
 
 
@@ -27,6 +26,7 @@ public class Main
     private static int placerestante = limiteinventaire - inventaire;
     private static String [] itemsinventaire = new String [limiteinventaire];
     private static String objet = "aucun objet";
+    private static String objetdanslamain = "main";
 
 //    private static boolean continuer = false;             inutile ._.
 
@@ -48,7 +48,6 @@ public class Main
     private static boolean dessus = false;
     private static boolean suicide = false;
     private static boolean frapper = false;
-    private static boolean equiper = false;
 
 
 
@@ -89,7 +88,7 @@ public class Main
             while(k<limiteinventaire) {
                 try {
                     if (reponse.contains(itemsinventaire[k])) {
-                        System.out.println("Vous avez pris l'objet " + itemsinventaire[k]);
+                        System.out.println("Vous avez équipé l'objet " + itemsinventaire[k]+" dans votre main.");
                         found = true;
                         break;
                     }
@@ -688,7 +687,7 @@ public class Main
 
                                 Main.recherchemots();
                                 if (frapper){
-                                    System.out.println("");
+                                    System.out.println("Vous frappez");
 
                                 }
                                 //IN DEV !
