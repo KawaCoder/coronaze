@@ -48,6 +48,8 @@ public class Main
     private static boolean dessus = false;
     private static boolean suicide = false;
     private static boolean frapper = false;
+    private static boolean equiper = false;
+
 
 
 
@@ -70,6 +72,8 @@ public class Main
         int recherchedessus = reponse.indexOf("dessus");
         int recherchesuicide = reponse.indexOf("suicide");
         int recherchefrapper = reponse.indexOf("frapper");
+        int rechercheequiper = reponse.indexOf("équiper");
+
 
 
 
@@ -78,6 +82,27 @@ public class Main
 
         }else if (recherchesuicide >= 0) {
             suicide = true;
+
+        }else if (rechercheequiper >= 0) {
+            int k = 0;
+            boolean found = false;
+            while(k<limiteinventaire) {
+                try {
+                    if (reponse.contains(itemsinventaire[k])) {
+                        System.out.println("Vous avez pris l'objet " + itemsinventaire[k]);
+                        found = true;
+                        break;
+                    }
+                }catch (NullPointerException e){
+                    break;
+                }
+                k++;
+            }
+            if (!found){
+                System.out.println("Vous ne possédez pas cet objet.");
+            }
+
+
 
         }else if (recherchefrapper >= 0) {
             frapper = true;
