@@ -54,6 +54,7 @@ public class Main
 
 
 
+
     //méthose d'analyse d'entrée de l'utilisateur
     public static void recherchemots() {
         Scanner sc = new Scanner(System.in);
