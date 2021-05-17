@@ -19,26 +19,59 @@ public class Main
 //
 
 
+
+
+
+    // référence des dégats de chaque objet
+
+    private static double degatgel = 1;
+    private static double degatfeuille = 0.1;
+    private static double degatmain = 2;
+
+
+
+
+    // l'inventaire
     private static boolean objetpris = false;
     private static int inventaire = 0;
     private static int limiteinventaire = 4;
     private static int placerestante = limiteinventaire - inventaire;
     private static String [] itemsinventaire = new String [limiteinventaire];
     private static String objet = "aucun objet";
-    private static String objetdanslamain = "main";
-
-//    private static boolean continuer = false;             inutile ._.
-
+    private static String objetdanslamain = "votre main";
+    private static double degatcauses = degatmain;
 
 
+
+    //      association des dégats aux objets (basée sur l'inventaire.): associe à chaque objet un nombre de dégat causés à un objet/ennemi
+    private static double [] listedegats = new double [100];
+
+
+
+
+
+
+//       private static boolean continuer = false;             inutile ._.
+
+
+
+    //      les directions
 
     private static boolean nord = false;
     private static boolean est = false;
     private static boolean ouest = false;
 
+
+    //      variables diverses
+
     private static String reponse = " ";
     private static boolean sortir = false;
     private static boolean observer = false;
+    private static boolean vieennemi;
+
+
+
+
 
     //      *******  les interactions! *******
     private static boolean enceinte = false;
@@ -50,6 +83,7 @@ public class Main
     private static boolean dessus = false;
     private static boolean suicide = false;
     private static boolean frapper = false;
+    private static boolean prendre = false;
 
 
 
@@ -75,9 +109,14 @@ public class Main
         int recherchesuicide = reponse.indexOf("suicide");
         int recherchefrapper = reponse.indexOf("frapper");
         int rechercheequiper = reponse.indexOf("équiper");
+        int rechercheprendre = reponse.indexOf("prendre");
 
 
 
+        if (rechercheprendre >= 0){
+            prendre = true;
+
+        }
 
         if (rechercheordi >= 0) {
             ordinateur = true;
@@ -91,6 +130,8 @@ public class Main
             while(k<limiteinventaire) {
                 try {
                     if (reponse.contains(itemsinventaire[k])) {
+                        objetdanslamain = itemsinventaire[k];
+                        degatcauses = listedegats[k];
                         System.out.println("Vous avez équipé l'objet " + itemsinventaire[k]+" dans votre main.");
                         found = true;
                         break;
@@ -186,8 +227,8 @@ public class Main
 
 //methode d'addition d'un objet dans l'inventaire
 
-    public static String mettreItemInventaire(String objet/*, int placerestante*/){
-
+    public static String mettreItemInventaire(String objet, double degatobjet){
+        objetpris = true;
         while(true) {
             Scanner sc = new Scanner(System.in);
             System.out.println("\n\n Il vous reste " + (limiteinventaire - inventaire) + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
@@ -195,6 +236,7 @@ public class Main
             if (reponseobjet.equalsIgnoreCase("oui")) {
                 itemsinventaire[inventaire] = objet;
                 inventaire++;
+                listedegats[inventaire] = degatobjet;
                 System.out.println("\n\nVous avez mis l'objet " + objet + " dans votre inventaire. Tapez \"inventaire\" pour voir votre inventaire.");
                 break;
 
@@ -207,6 +249,7 @@ public class Main
                 System.out.println("je n'ai pas compris.");
             }
         }
+        prendre = false;
         return ("azertyuiop");
     }
 
@@ -313,12 +356,12 @@ public class Main
                 enceinte = false;
 
 
-            }else if(gel){
-                objet = "gel";
+            }else if(prendre && gel){
                 objetpris = true;
 
-                Main.mettreItemInventaire(objet/*, placerestante*/);
+                Main.mettreItemInventaire("gel", degatgel);
                 gel = false;
+                prendre = false;
 
 
             }else if(sortir) {
@@ -659,18 +702,18 @@ public class Main
                 Main.recherchemots();
 
 
-                if (feuille){
+                if (prendre && feuille){
                     System.out.println("\n\nVous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
-                    objet = "feuille";
                     objetpris = true;
 
-                    Main.mettreItemInventaire(objet/*, placerestante*/);
+                    Main.mettreItemInventaire("feuille", degatfeuille);
                     feuille = false;
+                    prendre = false;
 
                 }else if (voiture){
                     while(true) {
                         System.out.println("\n\nVous vous dirigez vers ce véhicule abandonné." +
-                                "Vous pouvez:" +
+                                "\n\nVous pouvez:" +
                                 "\nregarder dans le COFFRE" +
                                 "\nmonter DEDANS" +
                                 "\nmonter DESSUS");
@@ -686,11 +729,14 @@ public class Main
                             while(true) {
                                 System.out.println("\n\nLe brouillard vous empêche de voir très loin... vous pouvez:" +
                                         "\n redescendre" +
-                                        "\n casser le pare-brise");
+                                        "\n fraper le pare-brise");
 
                                 Main.recherchemots();
                                 if (frapper){
-                                    System.out.println("Vous frappez");
+                                    System.out.println("\n\nVous frappez le pare brise avec "+ objetdanslamain);
+                                    try {Thread.sleep(300);}catch(InterruptedException e){}
+
+                                    System.out.println("\n\nle pare-brise commence à se briser. "+ objetdanslamain);
 
                                 }
                                 //IN DEV !
