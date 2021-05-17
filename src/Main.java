@@ -67,7 +67,7 @@ public class Main
     private static String reponse = " ";
     private static boolean sortir = false;
     private static boolean observer = false;
-    private static boolean vieennemi;
+    private static double vieennemi;
 
 
 
@@ -139,7 +139,7 @@ public class Main
                     if (reponse.contains(itemsinventaire[k])) {
                         objetdanslamain = itemsinventaire[k];
                         degatcauses = listedegats[k];
-                        System.out.println("Vous avez équipé l'objet " + itemsinventaire[k]+" dans votre main.");
+                        System.out.println("\n\n\nVous avez équipé l'objet " + itemsinventaire[k]+" dans votre main.");
                         found = true;
                         break;
                     }
@@ -149,7 +149,7 @@ public class Main
                 k++;
             }
             if (!found){
-                System.out.println("Vous ne possédez pas cet objet.");
+                System.out.println("\n\n\nVous ne possédez pas cet objet.");
             }
 
 
@@ -238,13 +238,13 @@ public class Main
         objetpris = true;
         while(true) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("\n\n Il vous reste " + (limiteinventaire - inventaire) + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
+            System.out.println("\n\n\n Il vous reste " + (limiteinventaire - inventaire) + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
             String reponseobjet = sc.nextLine();
             if (reponseobjet.equalsIgnoreCase("oui")) {
                 itemsinventaire[inventaire] = objet;
-                inventaire++;
                 listedegats[inventaire] = degatobjet;
-                System.out.println("\n\nVous avez mis l'objet " + objet + " dans votre inventaire. Tapez \"inventaire\" pour voir votre inventaire.");
+                inventaire++;
+                System.out.println("\n\n\nVous avez mis l'objet " + objet + " dans votre inventaire. Tapez \"inventaire\" pour voir votre inventaire.");
                 break;
 
             } else if (reponseobjet.equalsIgnoreCase("non")) {
@@ -317,7 +317,7 @@ public class Main
                     }catch(InterruptedException e){
 
                     }
-                    System.out.println("\n\n\n\n\n\n ... \n\n\n");
+                    System.out.println("\n\n\n\n\n\n\n\n\n ... \n\n\n\n");
                     try{
                         Thread.sleep(2000);
 
@@ -338,7 +338,7 @@ public class Main
 
                 }
             }else if(suicide){
-                System.out.println("\n\nVous ouvrez la fenêtre, puis vous sautez. Vous mourez sur le coup. Vous êtes maintenant un fantôme.");
+                System.out.println("\n\n\nVous ouvrez la fenêtre, puis vous sautez. Vous mourez sur le coup. Vous êtes maintenant un fantôme.");
                 suicide = false;
 
 
@@ -532,7 +532,7 @@ public class Main
         String unchoc = "UN CHOC...";
         String toutestnoir = "TOUT EST NOIR";
         String cestlafin = "C'EST LA FIN";
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         for (int k=0;k < toutestnoir.length(); k++) {
             try {
                 Thread.sleep(200);
@@ -542,7 +542,7 @@ public class Main
             }
             System.out.print(toutestnoir.charAt(k));
         }
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 
 
@@ -565,7 +565,7 @@ public class Main
             }
             System.out.print(unchoc.charAt(k));
         }
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         try{
             Thread.sleep(2000);
@@ -584,7 +584,7 @@ public class Main
             }
             System.out.print(cestlafin.charAt(k));
         }
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         try{
             Thread.sleep(2000);
@@ -636,7 +636,7 @@ public class Main
 
 
 
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 
 
@@ -710,7 +710,7 @@ public class Main
 
 
                 if (prendre && feuille){
-                    System.out.println("\n\nVous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
+                    System.out.println("\n\n\nVous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
                     objetpris = true;
 
                     Main.mettreItemInventaire("feuille", degatfeuille);
@@ -719,32 +719,38 @@ public class Main
 
                 }else if (voiture){
                     while(true) {
-                        System.out.println("\n\nVous vous dirigez vers ce véhicule abandonné." +
-                                "\n\nVous pouvez:" +
+                        System.out.println("\n\n\nVous vous dirigez vers ce véhicule abandonné." +
+                                "\n\n\nVous pouvez:" +
                                 "\nregarder dans le COFFRE" +
                                 "\nmonter DEDANS" +
-                                "\nmonter DESSUS");
+                                "\nmonter DESSUS\n");
 
                         Main.recherchemots();
+                        vieennemi = 10;
                         if (dedans){
-                            System.out.println("\n\nLa voiture est fermée à clef. la porte semble faible...");
+                            try {Thread.sleep(1000);}catch(InterruptedException e){}
+                            System.out.println("\n\n\nLa voiture est fermée à clef. la porte semble faible...");
                             dedans = false;
 
                         }else if (dessus){
-                            System.out.println("\n\nVous montez sur la voiture...");
+                            System.out.println("\n\n\nVous montez sur la voiture...");
                             try {Thread.sleep(1000);}catch(InterruptedException e){}
                             while(true) {
-                                System.out.println("\n\nLe brouillard vous empêche de voir très loin... vous pouvez:" +
+                                System.out.println("\n\n\nLe brouillard vous empêche de voir très loin... vous pouvez:" +
                                         "\n redescendre" +
-                                        "\n fraper le pare-brise");
+                                        "\n frapper le pare-brise");
 
                                 Main.recherchemots();
                                 if (frapper){
-                                    System.out.println("\n\nVous frappez le pare brise avec "+ objetdanslamain);
-                                    try {Thread.sleep(300);}catch(InterruptedException e){}
+                                    System.out.println("\n\n\nVous frappez le pare brise avec "+ objetdanslamain);
+                                    try {Thread.sleep(700);}catch(InterruptedException e){}
+                                    vieennemi = vieennemi - degatcauses;
+                                    if (vieennemi <= 0){
+                                        System.out.println("\nLe pare-brise est cassé. Vous avez accès à l'intérieur de la voiture");
+                                    }else if (vieennemi <= 5){
+                                        System.out.println("\nLe pare-brise se fissure.");
 
-                                    System.out.println("\n\nle pare-brise commence à se briser. "+ objetdanslamain);
-
+                                    }
                                 }
                                 //IN DEV !
                             }
