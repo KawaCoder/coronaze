@@ -29,6 +29,7 @@ public class Main
 
 //    private static boolean continuer = false;             inutile ._.
 
+
     private static boolean nord = false;
     private static boolean est = false;
     private static boolean ouest = false;
