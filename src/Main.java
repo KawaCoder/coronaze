@@ -57,6 +57,7 @@ public class Main {
     private static boolean observer = false;
     private static double vieennemi;
     private static String output = " ";
+    private static boolean voiture_ouverte = false;
 
 
     //      *******  les interactions! *******
@@ -74,21 +75,26 @@ public class Main {
     private static boolean redescendre = false;
 
 
+
     //      méthode d'criture lettre par lettre
+
     public static void output(String output) {
 
-     for(int k = 0;k<output.length();k++){
-        try {
-            Thread.sleep(20);
+        System.out.println("\n\n\n");
 
-        } catch (InterruptedException e) {
+        for(int k = 0;k<output.length();k++){
+            try {
+                Thread.sleep(15);
 
+            } catch (InterruptedException e) {
+
+            }
+            System.out.print(output.charAt(k));
         }
-        System.out.print(output.charAt(k));
-    }
-     System.out.println("\n");
+        System.out.println("\n");
 
-}
+    }
+
 
 
     //méthose d'analyse d'entrée de l'utilisateur
@@ -117,7 +123,18 @@ public class Main {
         int rechercheredescendre = reponse.indexOf("redescendre");
 
 
-
+        /*enceinte = false;
+        ordinateur = false;
+        gel = false;
+        feuille = false;
+        voiture = false;
+        dedans = false;                         Je ne sais pas si c'est utile de redéfinir toutes les variables... je verrais
+        dessus = false;
+        suicide = false;
+        frapper = false;
+        prendre = false;
+        fouiller = false;
+        redescendre = false;*/
 
 
         if (rechercheprendre >= 0){
@@ -145,7 +162,7 @@ public class Main {
                     if (reponse.contains(itemsinventaire[k])) {
                         objetdanslamain = itemsinventaire[k];
                         degatcauses = listedegats[k];
-                        Main.output("\n\n\nVous avez équipé l'objet " + itemsinventaire[k]+" dans votre main.");
+                        Main.output("Vous avez équipé l'objet " + itemsinventaire[k]+" dans votre main.");
                         found = true;
                         break;
                     }
@@ -155,7 +172,7 @@ public class Main {
                 k++;
             }
             if (!found){
-                Main.output("\n\n\nVous ne possédez pas cet objet.");
+                Main.output("Vous ne possédez pas cet objet.");
             }
 
 
@@ -202,7 +219,7 @@ public class Main {
 
         }else{
 
-            Main.output("\n \n  Hein?? Veuillez repeter.");
+            Main.output("  Hein?? Veuillez repeter.");
 
 
         }
@@ -235,7 +252,7 @@ public class Main {
 //methode d'affichage des items de l'inventaire
 
     public static String afficherinventaire(int inventaire){
-        Main.output("\n \n Vous avez " +inventaire+ " objets dans votre inventaire:");
+        Main.output(" Vous avez " +inventaire+ " objets dans votre inventaire:");
 
         for (int g = -1;g < inventaire -1; g ++ )
             Main.output("-" +itemsinventaire[g +1]);
@@ -250,17 +267,17 @@ public class Main {
         objetpris = true;
         while(true) {
             Scanner sc = new Scanner(System.in);
-            Main.output("\n\n\n Il vous reste " + (limiteinventaire - inventaire) + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
+            Main.output(" Il vous reste " + (limiteinventaire - inventaire) + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
             String reponseobjet = sc.nextLine();
             if (reponseobjet.equalsIgnoreCase("oui")) {
                 itemsinventaire[inventaire] = objet;
                 listedegats[inventaire] = degatobjet;
                 inventaire++;
-                Main.output("\n\n\nVous avez mis l'objet " + objet + " dans votre inventaire. Tapez \"inventaire\" pour voir votre inventaire.");
+                Main.output("Vous avez mis l'objet " + objet + " dans votre inventaire. Tapez \"inventaire\" pour voir votre inventaire.");
                 break;
 
             } else if (reponseobjet.equalsIgnoreCase("non")) {
-                Main.output("\n \n Ok");
+                Main.output(" Ok");
                 objetpris = false;
                 break;
 
@@ -315,7 +332,7 @@ public class Main {
             if(ordinateur){
                 j++;
                 if (j == 1) {
-                    Main.output("\n \n Votre ordinateur n'a plus de batterie");
+                    Main.output(" Votre ordinateur n'a plus de batterie");
                     ordinateur = false;
                 }else if (j >= 3){
                     Main.output("OOH! je vous dis que l'ordinateur n'a plus de batterie!!!");
@@ -329,7 +346,7 @@ public class Main {
                     }catch(InterruptedException e){
 
                     }
-                    Main.output("\n\n\n\n\n\n\n\n\n ... \n\n\n\n");
+                    Main.output("\n\n\n\n\n\n ... \n\n\n\n");
                     try{
                         Thread.sleep(2000);
 
@@ -350,7 +367,7 @@ public class Main {
 
                 }
             }else if(suicide){
-                Main.output("\n\n\nVous ouvrez la fenêtre, puis vous sautez. Vous mourez sur le coup. Vous êtes maintenant un fantôme.");
+                Main.output("Vous ouvrez la fenêtre, puis vous sautez. Vous mourez sur le coup. Vous êtes maintenant un fantôme.");
                 suicide = false;
 
 
@@ -360,13 +377,13 @@ public class Main {
                 if(!musique){
                     song.start();
                     musique = true;
-                    Main.output("\n \n  Vous mettez de la musique. L'ambiance s'ameliore.Vous vous rendez compte que vous etiez stresse(e)\n mais...pourquoi? Quelque chose vous angoisse mais vous \n ne savez pas quoi...Surement un mauvais presentiment...");
+                    Main.output("  Vous mettez de la musique. L'ambiance s'ameliore.Vous vous rendez compte que vous etiez stresse(e)\n mais...pourquoi? Quelque chose vous angoisse mais vous \n ne savez pas quoi...Surement un mauvais presentiment...");
 
                 }else{
                     if (i == 2){
-                        Main.output("\n \n Vous avez deja mis de la musique. Je pense sincerement qu'il vous faut un sonotone.");
+                        Main.output(" Vous avez deja mis de la musique. Je pense sincerement qu'il vous faut un sonotone.");
                     }else if (i == 3){
-                        Main.output("\n \n JE SUIS DEJA BIEN GENTIL DE METTRE DE LA MUSIQUE, ALORS NE ME SAOULEZ PAS AVEC\n VOS CHOIX DIFFICILES! VOUS VOULIEZ DE LA MUSIQUE,\n EH BEN LA VOILA VOTRE MUSIQUE!!!");
+                        Main.output(" JE SUIS DEJA BIEN GENTIL DE METTRE DE LA MUSIQUE, ALORS NE ME SAOULEZ PAS AVEC\n VOS CHOIX DIFFICILES! VOUS VOULIEZ DE LA MUSIQUE,\n EH BEN LA VOILA VOTRE MUSIQUE!!!");
 
                     }
 
@@ -384,7 +401,7 @@ public class Main {
 
 
             }else if(sortir) {
-                Main.output("\n \n Vous sortez pour vous changer les idees.L'air frais vous fera du bien. \n Ou voulez-vous aller?");
+                Main.output(" Vous sortez pour vous changer les idees.L'air frais vous fera du bien. \n Ou voulez-vous aller?");
                 sortir = false;
                 break;
             }
@@ -404,10 +421,10 @@ public class Main {
             //si le Nord est choisi
             //         System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
             if(nord){
-                Main.output("\n \n Vous allez vers le Nord...Vous voyez un batiment au loin, y aller?");
+                Main.output(" Vous allez vers le Nord...Vous voyez un batiment au loin, y aller?");
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
-                    Main.output("\n \n Vous decidez d'y aller. Apres tout, ce n'est qu'un grand immeuble. Pourquoi se mefier?");
+                    Main.output(" Vous decidez d'y aller. Apres tout, ce n'est qu'un grand immeuble. Pourquoi se mefier?");
                     break;
 
                 }else if (reponse.equalsIgnoreCase("non")){
@@ -424,10 +441,10 @@ public class Main {
                 //si l'ouest est choisi
                 //  Main.output("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
             }else if(ouest){
-                Main.output("\n \n Vous allez vers l'ouest...Vous voyez un batiment au loin, y aller?");
+                Main.output(" Vous allez vers l'ouest...Vous voyez un batiment au loin, y aller?");
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
-                    Main.output("\n \n Vous decidez d'y aller. Vous vous sentez libre d'explorer cette nouvelle ville.");
+                    Main.output(" Vous decidez d'y aller. Vous vous sentez libre d'explorer cette nouvelle ville.");
                     break;
 
 
@@ -445,10 +462,10 @@ public class Main {
                 //si l'est est choisi
                 // Main.output("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
             }else if(est){
-                Main.output("\n \n Vous allez vers l'est...Vous voyez un batiment au loin, y aller?");
+                Main.output(" Vous allez vers l'est...Vous voyez un batiment au loin, y aller?");
                 reponse = sc.nextLine();
                 if (reponse.equalsIgnoreCase("oui")){
-                    Main.output("\n \n Vous decidez d'y aller. Vous vous sentez libre d'explorer cette nouvelle ville.");
+                    Main.output(" Vous decidez d'y aller. Vous vous sentez libre d'explorer cette nouvelle ville.");
                     break;
 
 
@@ -700,9 +717,10 @@ public class Main {
 
 
         objetpris = false;
+        Main.recherchemots();
         while(true){
             System.out.println("\n");
-            Main.recherchemots();
+
 
             if(observer) {
 
@@ -724,7 +742,7 @@ public class Main {
 
 
                 if (prendre && feuille){
-                    Main.output("\n\n\nVous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
+                    Main.output("Vous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
                     objetpris = true;
 
                     Main.mettreItemInventaire("feuille", degatfeuille);
@@ -733,8 +751,8 @@ public class Main {
 
                 }else if (voiture){
                     while(true) {
-                        Main.output("\n\n\nVous vous dirigez vers ce véhicule abandonné." +
-                                "\n\n\nVous pouvez:" +
+                        Main.output("Vous vous dirigez vers ce véhicule abandonné." +
+                                "Vous pouvez:" +
                                 "\nregarder dans le COFFRE" +
                                 "\nmonter DEDANS" +
                                 "\nmonter DESSUS\n");
@@ -743,32 +761,52 @@ public class Main {
                         vieennemi = 10;
                         if (dedans){
                             try {Thread.sleep(1000);}catch(InterruptedException e){}
-                            Main.output("\n\n\nLa voiture est fermée à clef. la porte semble faible...");
+                            Main.output("La voiture est fermée à clef. la porte semble faible...");
                             dedans = false;
 
                         }else if (dessus){
-                            Main.output("\n\n\nVous montez sur la voiture...");
+                            Main.output("Vous montez sur la voiture...");
                             try {Thread.sleep(1000);}catch(InterruptedException e){}
                             while(true) {
-                                Main.output("\n\n\nLe brouillard vous empêche de voir très loin... vous pouvez:" +
-                                        "\n redescendre" +
-                                        "\n frapper le pare-brise");
+                                if (voiture_ouverte){
+                                    Main.output("Le brouillard vous empêche de voir très loin... vous pouvez:" +
+                                            "\n -redescendre" +
+                                            "\n -frapper le pare-brise" +
+                                            "\n -fouiller la voiture");
+
+                                }else{
+                                    Main.output("Le brouillard vous empêche de voir très loin... vous pouvez:" +
+                                            "\n -redescendre" +
+                                            "\n -frapper le pare-brise");
+                                }
+
 
                                 Main.recherchemots();
                                 if (frapper){
-                                    Main.output("\n\n\nVous frappez le pare brise avec "+ objetdanslamain);
+                                    Main.output("Vous frappez le pare brise avec "+ objetdanslamain);
                                     try {Thread.sleep(700);}catch(InterruptedException e){}
                                     vieennemi = vieennemi - degatcauses;
                                     if (vieennemi <= 0){
                                         Main.output("\nLe pare-brise est cassé. Vous avez accès à l'intérieur de la voiture");
+                                        voiture_ouverte = true;
                                     }else if (vieennemi <= 5){
                                         Main.output("\nLe pare-brise se fissure.");
 
                                     }
+                                    frapper = false;
                                 }else if (redescendre){
-                                    Main.output("\n\n\n Vous redescendez de la voiture...");
+                                    Main.output(" Vous redescendez de la voiture...");
                                     try {Thread.sleep(1000);}catch(InterruptedException e){}
                                     break;
+
+                                }else if (voiture_ouverte && fouiller && voiture){
+                                    output("Vous fouillez toute la voiture...");
+                                    try {Thread.sleep(2000);}catch(InterruptedException e){}
+                                    output("Vous avez trouvé:" +
+                                            "\n -Un briquet" +
+                                            "\n -Un téléphone portable" +
+                                            "\n -Des lunettes");
+
 
                                 }
                             }
