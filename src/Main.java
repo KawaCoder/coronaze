@@ -482,7 +482,6 @@ public class Main {
 
         }
 
-/*
         try{
             Thread.sleep(2000);
 
@@ -661,7 +660,6 @@ public class Main {
 
 
 
-*/
 
 
 
@@ -806,7 +804,6 @@ public class Main {
                                             "\n -Un briquet" +
                                             "\n -Un téléphone portable" +
                                             "\n -Des lunettes");
-
 
                                 }
                             }
