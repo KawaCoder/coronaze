@@ -51,7 +51,8 @@ public class choc extends Thread{
         try {
             byte bytes[] = new byte[1024];
             int bytesRead=0;
-            while ((bytesRead = audioInputStream.read(bytes, 0, bytes.length)) != -1) {
+            while ((bytesRead = audioInputStream.read(bytes,
+                    0, bytes.length)) != -1) {
                 line.write(bytes, 0, bytesRead);
             }
         } catch (IOException io) {
