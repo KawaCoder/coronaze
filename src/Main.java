@@ -58,13 +58,24 @@ public class Main {
     private static double vieennemi;
     private static String output = " ";
     private static boolean voiture_ouverte = false;
+    private static boolean butintrouve = false;
 
 
-    //      *******  les interactions! *******
+
+    //      ******* les objets *******
     private static boolean enceinte = false;
     private static boolean ordinateur = false;
     private static boolean gel = false;
     private static boolean feuille = false;
+    private static boolean briquet = false;
+    private static boolean lunettes = false;
+    private static boolean telephone  = false;
+
+
+
+
+    //      *******  les interactions! *******
+
     private static boolean voiture = false;
     private static boolean dedans = false;
     private static boolean dessus = false;
@@ -80,7 +91,7 @@ public class Main {
 
     public static void output(String output) {
 
-        System.out.println("\n\n\n");
+        System.out.println("\n\n");
 
         for(int k = 0;k<output.length();k++){
             try {
@@ -91,7 +102,7 @@ public class Main {
             }
             System.out.print(output.charAt(k));
         }
-        System.out.println("\n");
+        System.out.print("\n\n");
 
     }
 
@@ -100,8 +111,9 @@ public class Main {
     //méthose d'analyse d'entrée de l'utilisateur
     public static void recherchemots() {
         Scanner sc = new Scanner(System.in);
+        System.out.print(">");
         reponse = sc.nextLine();
-        //ints qui permettent la recherche dans l'input les mots "ordinateur", "enceinte", "gel" ...
+        //ints de l'index de l'analyseur syntaxique
         int recherchepartir = reponse.indexOf("partir");
         int recherchesortir = reponse.indexOf("sortir");
         int rechercheordi = reponse.indexOf("ordinateur");
@@ -482,6 +494,7 @@ public class Main {
 
         }
 
+/*
         try{
             Thread.sleep(2000);
 
@@ -663,6 +676,7 @@ public class Main {
 
 
 
+*/
 
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
@@ -752,12 +766,11 @@ public class Main {
                     while(true) {
                         Main.output("Vous vous dirigez vers ce véhicule abandonné." +
                                 "Vous pouvez:" +
-                                "\nregarder dans le COFFRE" +
                                 "\nmonter DEDANS" +
                                 "\nmonter DESSUS\n");
 
                         Main.recherchemots();
-                        vieennemi = 10;
+                        vieennemi = 5;
                         if (dedans){
                             try {Thread.sleep(1000);}catch(InterruptedException e){}
                             Main.output("La voiture est fermée à clef. la porte semble faible...");
@@ -796,6 +809,7 @@ public class Main {
                                 }else if (redescendre){
                                     Main.output(" Vous redescendez de la voiture...");
                                     try {Thread.sleep(1000);}catch(InterruptedException e){}
+                                    redescendre = false;
                                     break;
 
                                 }else if (voiture_ouverte && fouiller && voiture){
@@ -805,6 +819,16 @@ public class Main {
                                             "\n -Un briquet" +
                                             "\n -Un téléphone portable" +
                                             "\n -Des lunettes");
+                                            butintrouve = true;
+
+                                }else if (butintrouve && prendre && briquet){
+                                    objetpris = true;
+
+                                    Main.mettreItemInventaire("gel", degatgel);
+                                    gel = false;
+                                    prendre = false;
+
+
 
                                 }
                             }
