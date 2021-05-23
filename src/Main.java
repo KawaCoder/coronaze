@@ -26,7 +26,9 @@ public class Main {
 
 
     // l'inventaire
-    private static boolean objetpris = false;
+    private static boolean objetpris1 = false;
+    private static boolean objetpris2 = false;
+    private static boolean objetpris3 = false;
     private static int inventaire = 0;
     private static int limiteinventaire = 4;
     private static int placerestante = limiteinventaire - inventaire;
@@ -63,8 +65,7 @@ public class Main {
 
 
     //      ******* les objets *******
-    private static boolean enceinte = false;
-    private static boolean ordinateur = false;
+
     private static boolean gel = false;
     private static boolean feuille = false;
     private static boolean briquet = false;
@@ -76,6 +77,8 @@ public class Main {
 
     //      *******  les interactions! *******
 
+    private static boolean enceinte = false;
+    private static boolean ordinateur = false;
     private static boolean voiture = false;
     private static boolean dedans = false;
     private static boolean dessus = false;
@@ -114,15 +117,21 @@ public class Main {
         System.out.print(">");
         reponse = sc.nextLine();
         //ints de l'index de l'analyseur syntaxique
+
+        int recherchegel = reponse.indexOf("gel");
+        int recherchefeuille = reponse.indexOf("feuille");
+        int recherchebriquet = reponse.indexOf("briquet");
+        int recherchelunettes = reponse.indexOf("lunettes");
+        int recherchetelephone = reponse.indexOf("téléphone");
+
+
         int recherchepartir = reponse.indexOf("partir");
         int recherchesortir = reponse.indexOf("sortir");
         int rechercheordi = reponse.indexOf("ordinateur");
         int rechercheenceinte = reponse.indexOf("enceinte");
-        int recherchegel = reponse.indexOf("gel");
         int rechercheinventaire = reponse.indexOf("inventaire");
         int rechercheobserver = reponse.indexOf("observer");
         int rechercheregarder = reponse.indexOf("regarder");
-        int recherchefeuille = reponse.indexOf("feuille");
         int recherchevoiture = reponse.indexOf("voiture");
         int recherchededans = reponse.indexOf("dedans");
         int recherchedessus = reponse.indexOf("dessus");
@@ -159,6 +168,15 @@ public class Main {
 
         }else if (recherchesuicide >= 0) {
             suicide = true;
+
+        }else if (recherchebriquet >= 0) {
+            briquet = true;
+
+        }else if (recherchelunettes >= 0) {
+            lunettes = true;
+
+        }else if (recherchetelephone >= 0) {
+            telephone = true;
 
         }else if (rechercheinfo >= 0) {
             Main.output("vous avez "+objetdanslamain+" dans la main.");
@@ -207,7 +225,7 @@ public class Main {
         }else if (recherchedessus >= 0) {
             dessus = true;
 
-        }else if (recherchegel >= 0 && !objetpris) {
+        }else if (recherchegel >= 0 && !objetpris1) {
             gel = true;
 
         }else if (recherchevoiture >= 0){
@@ -223,7 +241,7 @@ public class Main {
 
             }
 
-        }else if (recherchefeuille >= 0 && !objetpris){
+        }else if (recherchefeuille >= 0 && !objetpris1){
             feuille = true;
 
         }else if (rechercheobserver >= 0  || rechercheregarder >= 0) {
@@ -276,7 +294,7 @@ public class Main {
 //methode d'addition d'un objet dans l'inventaire
 
     public static String mettreItemInventaire(String objet, double degatobjet){
-        objetpris = true;
+        objetpris1 = true;
         while(true) {
             Scanner sc = new Scanner(System.in);
             Main.output(" Il vous reste " + (limiteinventaire - inventaire) + " places libres dans votre inventaire. Voulez-vous ranger cet objet dans votre inventaire ?");
@@ -290,7 +308,7 @@ public class Main {
 
             } else if (reponseobjet.equalsIgnoreCase("non")) {
                 Main.output(" Ok");
-                objetpris = false;
+                objetpris1 = false;
                 break;
 
             }else{
@@ -329,7 +347,7 @@ public class Main {
         while(true) {
 
             System.out.println("\n \n \n");
-            if (!objetpris) {
+            if (!objetpris1) {
 
                 Main.output("Vous voyez:\n ordinateur \n gel hydroalcolique \n enceinte bluetooth");
             } else {
@@ -405,7 +423,7 @@ public class Main {
 
 
             }else if(prendre && gel){
-                objetpris = true;
+                objetpris1 = true;
 
                 Main.mettreItemInventaire("gel", degatgel);
                 gel = false;
@@ -729,7 +747,7 @@ public class Main {
 */
 
 
-        objetpris = false;
+        objetpris1 = false;
         Main.recherchemots();
         while(true){
             System.out.println("\n");
@@ -742,7 +760,7 @@ public class Main {
 
                 System.out.println("\n \n \n");
 
-                if (objetpris) {
+                if (objetpris1) {
 
                     Main.output("Vous voyez:\n une voiture \n");
                 } else {
@@ -756,7 +774,7 @@ public class Main {
 
                 if (prendre && feuille){
                     Main.output("Vous vous dirigez pour ramasser cette feuille de papier.\n Il est ecrit quelque chose dessus. Mais vous n'arrivez pas à lire ce qu il y a marque dessus.");
-                    objetpris = true;
+                    objetpris1 = true;
 
                     Main.mettreItemInventaire("feuille", degatfeuille);
                     feuille = false;
@@ -822,10 +840,10 @@ public class Main {
                                             butintrouve = true;
 
                                 }else if (butintrouve && prendre && briquet){
-                                    objetpris = true;
+                                    objetpris1 = true;
 
-                                    Main.mettreItemInventaire("gel", degatgel);
-                                    gel = false;
+                                    Main.mettreItemInventaire("briquet", //INDEV);
+                                    briquet = false;
                                     prendre = false;
 
 
