@@ -23,6 +23,8 @@ public class Main {
     private static double degatgel = 1;
     private static double degatfeuille = 0.1;
     private static double degatmain = 2;
+    private static double degatbriquet = 1;
+
 
 
     // l'inventaire
@@ -837,12 +839,14 @@ public class Main {
                                             "\n -Un briquet" +
                                             "\n -Un téléphone portable" +
                                             "\n -Des lunettes");
-                                            butintrouve = true;
+                                    butintrouve = true;
+                                    fouiller = false;
 
-                                }else if (butintrouve && prendre && briquet){
+
+                                }else if (butintrouve && prendre && briquet && !objetpris1){
                                     objetpris1 = true;
 
-                                    Main.mettreItemInventaire("briquet", //INDEV);
+                                    Main.mettreItemInventaire("briquet", degatbriquet);
                                     briquet = false;
                                     prendre = false;
 
