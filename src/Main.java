@@ -146,18 +146,18 @@ public class Main {
         int rechercheredescendre = reponse.indexOf("redescendre");
 
 
-        /*enceinte = false;
+        enceinte = false;
         ordinateur = false;
         gel = false;
         feuille = false;
         voiture = false;
-        dedans = false;                         Je ne sais pas si c'est utile de redéfinir toutes les variables... je verrais
+        dedans = false;
         dessus = false;
         suicide = false;
         frapper = false;
         prendre = false;
         fouiller = false;
-        redescendre = false;*/
+        redescendre = false;
 
 
         if (rechercheprendre >= 0){
@@ -514,7 +514,7 @@ public class Main {
 
         }
 
-/*
+
         try{
             Thread.sleep(2000);
 
@@ -696,7 +696,7 @@ public class Main {
 
 
 
-*/
+
 
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
@@ -784,6 +784,7 @@ public class Main {
 
                 }else if (voiture){
                     while(true) {
+                        voiture = false;
                         Main.output("Vous vous dirigez vers ce véhicule abandonné." +
                                 "Vous pouvez:" +
                                 "\nmonter DEDANS" +
