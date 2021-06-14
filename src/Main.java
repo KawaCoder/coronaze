@@ -676,7 +676,6 @@ public class Main {
         banniere[7] = bannieree;
 
 
-
         for (int l=0;l < 8; l++){
 
             for (int k=0;k < banniere[l].length(); k++) {
