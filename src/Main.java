@@ -146,7 +146,7 @@ public class Main {
         int rechercheredescendre = reponse.indexOf("redescendre");
 
 
-        /*enceinte = false;
+        enceinte = false;
         ordinateur = false;
         gel = false;
         feuille = false;
@@ -157,8 +157,13 @@ public class Main {
         frapper = false;
         prendre = false;
         fouiller = false;
-        redescendre = false;*/
+        redescendre = false;
 
+
+        if (recherchefouiller >= 0) {
+            fouiller = true;
+
+        }else
 
         if (rechercheprendre >= 0){
             prendre = true;
@@ -208,9 +213,6 @@ public class Main {
             }
 
 
-
-        }else if (recherchefouiller >= 0) {
-            fouiller = true;
 
         }else if (recherchefrapper >= 0) {
             frapper = true;
@@ -783,7 +785,6 @@ public class Main {
 
                 }else if (voiture){
                     while(true) {
-                        voiture = false;
                         Main.output("Vous vous dirigez vers ce véhicule abandonné." +
                                 "Vous pouvez:" +
                                 "\nmonter DEDANS" +
@@ -811,7 +812,6 @@ public class Main {
                                             "\n -redescendre" +
                                             "\n -frapper le pare-brise");
                                 }
-
 
                                 Main.recherchemots();
                                 if (frapper){
