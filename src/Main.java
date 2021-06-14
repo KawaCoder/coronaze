@@ -146,7 +146,7 @@ public class Main {
         int rechercheredescendre = reponse.indexOf("redescendre");
 
 
-        enceinte = false;
+        /*enceinte = false;
         ordinateur = false;
         gel = false;
         feuille = false;
@@ -157,7 +157,7 @@ public class Main {
         frapper = false;
         prendre = false;
         fouiller = false;
-        redescendre = false;
+        redescendre = false;*/
 
 
         if (rechercheprendre >= 0){
