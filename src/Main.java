@@ -515,202 +515,202 @@ public class Main {
         }
 
 
-        try{
-            Thread.sleep(2000);
-
-        }catch(InterruptedException e){
-
-        }
-        song.stop();
-
-        sample.choc chocsong = new sample.choc();
-        chocsong.start();
-
-
-
-        String bannierec = "\n" +
-                "░█████╗░\n" +
-                "██╔══██╗\n" +
-                "██║░░╚═╝\n" +
-                "██║░░██╗\n" +
-                "╚█████╔╝\n" +
-                "░╚════╝░";
-
-        String banniereo = "\n" +
-                "        ░█████╗░\n" +
-                "        ██╔══██╗\n" +
-                "        ██║░░██║\n" +
-                "        ██║░░██║\n" +
-                "        ╚█████╔╝\n" +
-                "        ░╚════╝░";
-        String bannierer = "\n" +
-                "                ██████╗░\n" +
-                "                ██╔══██╗                               .ed\"\"\"\" \"\"\"$$$$be.\n" +
-                "                ██████╔╝                             -\"           ^\"\"**$$$e.\n" +
-                "                ██╔══██╗                           .\"                   '$$$c\n" +
-                "                ██║░░██║                          /                      \"4$$b\n" +
-                "                ╚═╝░░╚═╝                         d  3                      $$$$";
-
-        String banniereo2 = "\n" +
-                "                        ░█████╗░                 $  *                   .$$$$$$\n" +
-                "                        ██╔══██╗                .$  ^c           $$$$$e$$$$$$$$.\n" +
-                "                        ██║░░██║                d$L  4.         4$$$$$$$$$$$$$$b\n" +
-                "                        ██║░░██║                $$$$b ^ceeeee.  4$$ECL.F*$$$$$$$\n" +
-                "                        ╚█████╔╝                $$$$P d$$$$F $ $$$$$$$$$- $$$$$$\n" +
-                "                        ░╚════╝░                3$$$F \"$$$$b   $\"$$$$$$$  $$$$*\"";
-
-        String bannieren = "\n" +
-                "                                ███╗░░██╗        $$P\"  \"$$b   .$ $$$$$...e$$\n" +
-                "                                ████╗░██║         *c    ..    $$ 3$$$$$$$$$$eF\n" +
-                "                                ██╔██╗██║           %ce\"\"    $$$  $$$$$$$$$$*\n" +
-                "                                ██║╚████║            *$e.    *** d$$$$$\"L$$\n" +
-                "                                ██║░╚███║             $$$      4J$$$$$% $$$\n" +
-                "                                ╚═╝░░╚══╝            $\"'$=e....$*$$**$cz$$\"";
-
-        String bannierea = "\n" +
-                "                                        ░█████╗░     $  *=%4.$ L L$ P3$$$F\n" +
-                "                                        ██╔══██╗     $   \"%*ebJLzb$e$$$$$b\n" +
-                "                                        ███████║      %..      4$$$$$$$$$$\n" +
-                "                                        ██╔══██║       $$$e   z$$$$$$$$$$ \n" +
-                "                                        ██║░░██║        \"*$c  \"$$$$$$$P\"\n" +
-                "                                        ╚═╝░░╚═╝          \"\"\"*$$$$$$$\"";
-
-        String bannierez = "\n" +
-                "                                                ███████╗\n" +
-                "                                                ╚════██║\n" +
-                "                                                ░░███╔═╝\n" +
-                "                                                ██╔══╝░░\n" +
-                "                                                ███████╗\n" +
-                "                                                ╚══════╝";
-
-        String bannieree = "\n" +
-                "                                                        ███████╗\n" +
-                "                                                        ██╔════╝\n" +
-                "                                                        █████╗░░\n" +
-                "                                                        ██╔══╝░░\n" +
-                "                                                        ███████╗\n" +
-                "                                                        ╚══════╝";
-
-        String unchoc = "UN CHOC...";
-        String toutestnoir = "TOUT EST NOIR";
-        String cestlafin = "C'EST LA FIN";
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        for (int k=0;k < toutestnoir.length(); k++) {
-            try {
-                Thread.sleep(200);
-
-            } catch (InterruptedException e) {
-
-            }
-            System.out.print(toutestnoir.charAt(k));
-        }
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
-
-
-
-        try{
-            Thread.sleep(2000);
-
-        }catch(InterruptedException e){
-
-        }
-
-
-
-        for (int k=0;k < unchoc.length(); k++) {
-            try {
-                Thread.sleep(200);
-
-            } catch (InterruptedException e) {
-
-            }
-            System.out.print(unchoc.charAt(k));
-        }
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
-        try{
-            Thread.sleep(2000);
-
-        }catch(InterruptedException e){
-
-        }
-
-
-        for (int k=0;k < cestlafin.length(); k++) {
-            try {
-                Thread.sleep(200);
-
-            } catch (InterruptedException e) {
-
-            }
-            System.out.print(cestlafin.charAt(k));
-        }
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
-        try{
-            Thread.sleep(2000);
-
-        }catch(InterruptedException e){
-
-        }
-
-        try{
-            Thread.sleep(2000);
-
-        }catch(InterruptedException e){
-
-        }
-
-        System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
-
-
-        String[] banniere = new String[8];
-        banniere[0] = bannierec;
-        banniere[1] = banniereo;
-        banniere[2] = bannierer;
-        banniere[3] = banniereo2;
-        banniere[4] = bannieren;
-        banniere[5] = bannierea;
-        banniere[6] = bannierez;
-        banniere[7] = bannieree;
-
-
-        for (int l=0;l < 8; l++){
-
-            for (int k=0;k < banniere[l].length(); k++) {
-
-                try {
-                    Thread.sleep(1);
-
-                } catch (InterruptedException e) {
-
-                }
-
-                System.out.print(banniere[l].charAt(k));
-            }
-        }
-
-
-
-
-
-
-
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
-
-
-/*
-        System.out.println("\n" +
-                "░█████╗░░█████╗░██████╗░░█████╗░███╗░░██╗░█████╗░███████╗███████╗\n" +
-                "██╔══██╗██╔══██╗██╔══██╗██╔══██╗████╗░██║██╔══██╗╚════██║██╔════╝\n" +
-                "██║░░╚═╝██║░░██║██████╔╝██║░░██║██╔██╗██║███████║░░███╔═╝█████╗░░\n" +
-                "██║░░██╗██║░░██║██╔══██╗██║░░██║██║╚████║██╔══██║██╔══╝░░██╔══╝░░\n" +
-                "╚█████╔╝╚█████╔╝██║░░██║╚█████╔╝██║░╚███║██║░░██║███████╗███████╗\n" +
-                "░╚════╝░░╚════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚═╝░░╚═╝╚══════╝╚══════╝");
-
-*/
+//        try{
+//            Thread.sleep(2000);
+//
+//        }catch(InterruptedException e){
+//
+//        }
+//        song.stop();
+//
+//        sample.choc chocsong = new sample.choc();
+//        chocsong.start();
+//
+//
+//
+//        String bannierec = "\n" +
+//                "░█████╗░\n" +
+//                "██╔══██╗\n" +
+//                "██║░░╚═╝\n" +
+//                "██║░░██╗\n" +
+//                "╚█████╔╝\n" +
+//                "░╚════╝░";
+//
+//        String banniereo = "\n" +
+//                "        ░█████╗░\n" +
+//                "        ██╔══██╗\n" +
+//                "        ██║░░██║\n" +
+//                "        ██║░░██║\n" +
+//                "        ╚█████╔╝\n" +
+//                "        ░╚════╝░";
+//        String bannierer = "\n" +
+//                "                ██████╗░\n" +
+//                "                ██╔══██╗                               .ed\"\"\"\" \"\"\"$$$$be.\n" +
+//                "                ██████╔╝                             -\"           ^\"\"**$$$e.\n" +
+//                "                ██╔══██╗                           .\"                   '$$$c\n" +
+//                "                ██║░░██║                          /                      \"4$$b\n" +
+//                "                ╚═╝░░╚═╝                         d  3                      $$$$";
+//
+//        String banniereo2 = "\n" +
+//                "                        ░█████╗░                 $  *                   .$$$$$$\n" +
+//                "                        ██╔══██╗                .$  ^c           $$$$$e$$$$$$$$.\n" +
+//                "                        ██║░░██║                d$L  4.         4$$$$$$$$$$$$$$b\n" +
+//                "                        ██║░░██║                $$$$b ^ceeeee.  4$$ECL.F*$$$$$$$\n" +
+//                "                        ╚█████╔╝                $$$$P d$$$$F $ $$$$$$$$$- $$$$$$\n" +
+//                "                        ░╚════╝░                3$$$F \"$$$$b   $\"$$$$$$$  $$$$*\"";
+//
+//        String bannieren = "\n" +
+//                "                                ███╗░░██╗        $$P\"  \"$$b   .$ $$$$$...e$$\n" +
+//                "                                ████╗░██║         *c    ..    $$ 3$$$$$$$$$$eF\n" +
+//                "                                ██╔██╗██║           %ce\"\"    $$$  $$$$$$$$$$*\n" +
+//                "                                ██║╚████║            *$e.    *** d$$$$$\"L$$\n" +
+//                "                                ██║░╚███║             $$$      4J$$$$$% $$$\n" +
+//                "                                ╚═╝░░╚══╝            $\"'$=e....$*$$**$cz$$\"";
+//
+//        String bannierea = "\n" +
+//                "                                        ░█████╗░     $  *=%4.$ L L$ P3$$$F\n" +
+//                "                                        ██╔══██╗     $   \"%*ebJLzb$e$$$$$b\n" +
+//                "                                        ███████║      %..      4$$$$$$$$$$\n" +
+//                "                                        ██╔══██║       $$$e   z$$$$$$$$$$ \n" +
+//                "                                        ██║░░██║        \"*$c  \"$$$$$$$P\"\n" +
+//                "                                        ╚═╝░░╚═╝          \"\"\"*$$$$$$$\"";
+//
+//        String bannierez = "\n" +
+//                "                                                ███████╗\n" +
+//                "                                                ╚════██║\n" +
+//                "                                                ░░███╔═╝\n" +
+//                "                                                ██╔══╝░░\n" +
+//                "                                                ███████╗\n" +
+//                "                                                ╚══════╝";
+//
+//        String bannieree = "\n" +
+//                "                                                        ███████╗\n" +
+//                "                                                        ██╔════╝\n" +
+//                "                                                        █████╗░░\n" +
+//                "                                                        ██╔══╝░░\n" +
+//                "                                                        ███████╗\n" +
+//                "                                                        ╚══════╝";
+//
+//        String unchoc = "UN CHOC...";
+//        String toutestnoir = "TOUT EST NOIR";
+//        String cestlafin = "C'EST LA FIN";
+//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+//        for (int k=0;k < toutestnoir.length(); k++) {
+//            try {
+//                Thread.sleep(200);
+//
+//            } catch (InterruptedException e) {
+//
+//            }
+//            System.out.print(toutestnoir.charAt(k));
+//        }
+//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+//
+//
+//
+//
+//        try{
+//            Thread.sleep(2000);
+//
+//        }catch(InterruptedException e){
+//
+//        }
+//
+//
+//
+//        for (int k=0;k < unchoc.length(); k++) {
+//            try {
+//                Thread.sleep(200);
+//
+//            } catch (InterruptedException e) {
+//
+//            }
+//            System.out.print(unchoc.charAt(k));
+//        }
+//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+//
+//        try{
+//            Thread.sleep(2000);
+//
+//        }catch(InterruptedException e){
+//
+//        }
+//
+//
+//        for (int k=0;k < cestlafin.length(); k++) {
+//            try {
+//                Thread.sleep(200);
+//
+//            } catch (InterruptedException e) {
+//
+//            }
+//            System.out.print(cestlafin.charAt(k));
+//        }
+//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+//
+//        try{
+//            Thread.sleep(2000);
+//
+//        }catch(InterruptedException e){
+//
+//        }
+//
+//        try{
+//            Thread.sleep(2000);
+//
+//        }catch(InterruptedException e){
+//
+//        }
+//
+//        System.out.println("***debug!!*** salut, nord=" +nord+ " ouest=" +ouest+ " est=" +est);
+//
+//
+//        String[] banniere = new String[8];
+//        banniere[0] = bannierec;
+//        banniere[1] = banniereo;
+//        banniere[2] = bannierer;
+//        banniere[3] = banniereo2;
+//        banniere[4] = bannieren;
+//        banniere[5] = bannierea;
+//        banniere[6] = bannierez;
+//        banniere[7] = bannieree;
+//
+//
+//        for (int l=0;l < 8; l++){
+//
+//            for (int k=0;k < banniere[l].length(); k++) {
+//
+//                try {
+//                    Thread.sleep(1);
+//
+//                } catch (InterruptedException e) {
+//
+//                }
+//
+//                System.out.print(banniere[l].charAt(k));
+//            }
+//        }
+//
+//
+//
+//
+//
+//
+//
+//        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+//
+//
+//
+///*
+//        System.out.println("\n" +
+//                "░█████╗░░█████╗░██████╗░░█████╗░███╗░░██╗░█████╗░███████╗███████╗\n" +
+//                "██╔══██╗██╔══██╗██╔══██╗██╔══██╗████╗░██║██╔══██╗╚════██║██╔════╝\n" +
+//                "██║░░╚═╝██║░░██║██████╔╝██║░░██║██╔██╗██║███████║░░███╔═╝█████╗░░\n" +
+//                "██║░░██╗██║░░██║██╔══██╗██║░░██║██║╚████║██╔══██║██╔══╝░░██╔══╝░░\n" +
+//                "╚█████╔╝╚█████╔╝██║░░██║╚█████╔╝██║░╚███║██║░░██║███████╗███████╗\n" +
+//                "░╚════╝░░╚════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚═╝░░╚═╝╚══════╝╚══════╝");
+//
+//*/
         String nomdujoueur;
         while(true){
 
