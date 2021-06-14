@@ -1,5 +1,7 @@
 # coronaze
 
+## New! : [![hey](https://img.shields.io/badge/Test%20the%20game%20now!-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/DR34M-M4K3R/coronaze/releases/download/0.1/Coronaze.bat)
+
 A text based game, in which you can do literally anything, like breaking a window with a piece of paper, or anything else. The game is about the lockdown, an apocalypse occured, and you have to survive
 for the moment, you can: <br/>
 - Pick up objects, put them into your hand<br/>
