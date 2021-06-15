@@ -1,4 +1,5 @@
 //package sample;
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 
@@ -38,6 +39,9 @@ public class Main {
     private static String objet = "aucun objet";
     private static String objetdanslamain = "votre main";
     private static double degatcauses = degatmain;
+
+    private static int limitebutin = 1;
+    private static String[] itemsbutin = new String[limitebutin];
 
 
     //      association des dégats aux objets (basée sur l'inventaire.): associe à chaque objet un nombre de dégat causés à un objet/ennemi
@@ -260,6 +264,38 @@ public class Main {
 
     }
 
+
+
+    public static void affichagebutin(String sourcedebutin, String ... args){
+        Scanner sc = new Scanner(System.in);
+        butintrouve = true;
+        fouiller = false;
+        output("Vous fouillez "+sourcedebutin);
+        try {Thread.sleep(2000);}catch(InterruptedException e){}
+
+
+        Main.output("Vous avez trouvé:");
+        for (String arg : args) {
+            System.out.println("\n -"+arg);
+        }
+        output("Quel objet voulez-vous prendre?");
+        Main.recherchemots();
+
+        if (briquet){
+            mettreItemInventaire("briquet", degatbriquet);
+            objetpris1 = true;
+
+        }if (lunettes){
+            mettreItemInventaire("briquet", 0.2);
+            objetpris2 = true;
+
+        }if (telephone){
+            mettreItemInventaire("telephone", 0.2);
+            objetpris3 = true;
+
+        }
+
+    }
 
 
     //methode d'analyse d'entree pour la direction a prendre
@@ -834,16 +870,11 @@ public class Main {
 
                                 }else if (voiture_ouverte && fouiller && voiture){
                                     output("Vous fouillez toute la voiture...");
-                                    try {Thread.sleep(2000);}catch(InterruptedException e){}
-                                    output("Vous avez trouvé:" +
-                                            "\n -Un briquet" +
-                                            "\n -Un téléphone portable" +
-                                            "\n -Des lunettes");
-                                    butintrouve = true;
-                                    fouiller = false;
+                                    affichagebutin("la voiture", "briquet", "lunettes", "téléphone");
+//                                    butintrouve = true;
+//                                    fouiller = false;
 
-
-                                }else if (butintrouve && prendre && briquet && !objetpris1){
+                                }/*else if (butintrouve && prendre && briquet && !objetpris1){
                                     objetpris1 = true;
 
                                     Main.mettreItemInventaire("briquet", degatbriquet);
@@ -852,7 +883,7 @@ public class Main {
 
 
 
-                                }
+                                }*/
                             }
                         }
                     }
