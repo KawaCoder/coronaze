@@ -1,6 +1,6 @@
 
 
-## New! : [![hey](https://img.shields.io/badge/Test%20the%20game%20now!-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/DR34M-M4K3R/coronaze/releases/download/0.1/Coronaze.bat) [![hey](https://img.shields.io/badge/TEST%20THE%20GAME%20NOW%20!-gray?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/DR34M-M4K3R/coronaze/releases/download/0.1/Coronaze.sh)
+## New! : [![hey](https://img.shields.io/badge/Test%20the%20game%20now!-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/DR34M-M4K3R/coronaze/releases/download/0.1/Coronaze.bat.zip) [![hey](https://img.shields.io/badge/TEST%20THE%20GAME%20NOW%20!-gray?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/DR34M-M4K3R/coronaze/releases/download/0.1/Coronaze.sh.zip)
 
 #### CONTACT ME TO HAVE THE PASSWORD OF THE TESTS FILES - thanks<br/>
 
