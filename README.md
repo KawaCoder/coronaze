@@ -7,6 +7,8 @@
 #### CONTACTEZ-MOI POUR AVOIR LE MOT DE PASSE DES FICHIERS DE TEST - DR34M-M4K3R#7751 - merci<br/><br/><br/>
 
 # coronaze
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla)](https://www.mozilla.org/en-US/MPL/)
+
 A text based game, in which you can do literally anything, like breaking a window with a piece of paper, or anything else. The game is about the lockdown, an apocalypse occured, and you have to survive
 for the moment, you can: <br/>
 - Pick up objects, put them into your hand<br/>
