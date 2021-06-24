@@ -3,6 +3,12 @@ import java.lang.reflect.Array;
 import java.util.Scanner;
 
 
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. 
+ * Creator: https://github.com/DR34M-M4K3R */
+
+
 public class Main {
 
 //
