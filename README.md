@@ -6,8 +6,11 @@
 
 #### CONTACTEZ-MOI POUR AVOIR LE MOT DE PASSE DES FICHIERS DE TEST - DR34M-M4K3R#7751 - merci<br/><br/><br/>
 
+
+
+
 # coronaze
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla)](https://www.mozilla.org/en-US/MPL/)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange.svg?style=for-the-badge&logo=mozilla)](https://www.mozilla.org/en-US/MPL/) [![hey](https://img.shields.io/badge/Join%20me%20on%20discord-181717?style=for-the-badge&logo=discord)](https://discord.gg/FPhHhBG25d)  [![Support Server](https://img.shields.io/discord/858046559316344852.svg?label=We%20are&colorB=7289da&style=for-the-badge)](https://discord.gg/FPhHhBG25d)
 
 A text based game, in which you can do literally anything, like breaking a window with a piece of paper, or anything else. The game is about the lockdown, an apocalypse occured, and you have to survive
 for the moment, you can: <br/>
