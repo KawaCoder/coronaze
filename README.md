@@ -55,4 +55,4 @@ pour le moment, vous pouvez : <br/>
 - monter sur une voiture, casser les vitres pour en voler le contenu
 - et d'autres choses secrètes ;)
 
-## Le jeu n'est pas du tout jouable ! Il est à un stade très avancé de développement. Vous pouvez toujours l'exécuter, mais la musique sera absente et faites attention où vous marchez, il y a beaucoup de bugs ! :)
+## Le jeu n'est pas du tout jouable ! Il est à un stade très reculé de développement. Vous pouvez toujours l'exécuter, mais la musique sera absente et faites attention où vous marchez, il y a beaucoup de bugs ! :)
